@@ -1,6 +1,5 @@
 
 *.pyc
-*.py
 *.cfg
 *.virtualenv
 lib/
