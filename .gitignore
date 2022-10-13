@@ -6,3 +6,4 @@ lib/
 *.sqlite3
 frukt/posts.txt
 constants.py
+.idea/
