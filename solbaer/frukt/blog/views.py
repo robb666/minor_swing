@@ -4,6 +4,7 @@ from .models import Post
 from django import forms
 
 
+
 # Create your views here.
 def home(request):
     context = {
@@ -30,4 +31,10 @@ class PostCreateView(CreateView):
 
 
 def about(request):
-    return render(request, 'blog/about.html', {'title': 'About'})
+    image = Post.objects.get(id=33)
+    # context = {
+    #     'image': Post.objects.get(id=33)
+    # }
+
+
+    return render(request, 'blog/about.html', {'image': image})
