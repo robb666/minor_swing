@@ -4,7 +4,6 @@ from .models import Post
 from django import forms
 
 
-
 # Create your views here.
 def home(request):
     context = {
@@ -35,6 +34,4 @@ def about(request):
     # context = {
     #     'image': Post.objects.get(id=33)
     # }
-
-
     return render(request, 'blog/about.html', {'post': image})
