@@ -4,7 +4,6 @@
         <article class="media content-section">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="#">{{ post.image }}</a>
               <small class="text-muted">{{ post.date_posted|date:"Y F d" }}</small>
             </div>
             <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>

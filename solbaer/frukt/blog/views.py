@@ -31,10 +31,10 @@ class PostCreateView(CreateView):
 
 
 def about(request):
-    image = Post.objects.get(id=33)
+    image = Post.objects.get(id=34)
     # context = {
     #     'image': Post.objects.get(id=33)
     # }
 
 
-    return render(request, 'blog/about.html', {'image': image})
+    return render(request, 'blog/about.html', {'post': image})

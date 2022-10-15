@@ -4,13 +4,12 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
-
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
-    image = models.ImageField(null=True, blank=True, upload_to='profile_pics')
+    image = models.ImageField(null=True, blank=True, upload_to='images')
 
     # default='default.webp', null=True, blank=True,
     def __str__(self):
