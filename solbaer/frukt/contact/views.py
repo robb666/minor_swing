@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from django.contrib import messages
 
 
 # Create your views here.
@@ -26,6 +27,7 @@ def index(request):
                       ['robert.patryk.grzelak@gmail.com'],
                       html_message=html)
 
+            messages.success(request, f'{name}! Thank you for submitting an inquiry. We will get back to you ASAP.')
             return redirect('index')
     else:
         form = ContactForm()

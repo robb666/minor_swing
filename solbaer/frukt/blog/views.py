@@ -31,7 +31,7 @@ class PostCreateView(CreateView):
 
 
 def about(request):
-    image = Post.objects.get(id=34)
+    image = Post.objects.get(id=35)
     # context = {
     #     'image': Post.objects.get(id=33)
     # }

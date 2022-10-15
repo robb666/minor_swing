@@ -4,10 +4,14 @@
         <article class="media content-section">
           <div class="media-body">
             <div class="article-metadata">
-              <small class="text-muted">{{ post.date_posted|date:"Y F d" }}</small>
+
+              <small class="text-muted">{{ post.date_posted|date:"d F Y" }}</small>
             </div>
-            <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-            <p class="article-content">{{ post.content }}</p>
+                <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.content }}</p>
+            {% if post.image %}
+                <img class="rounded-circle" width=450 src="{{ post.image.url }}">
+            {% endif %}
           </div>
         </article>
     {% endfor %}
