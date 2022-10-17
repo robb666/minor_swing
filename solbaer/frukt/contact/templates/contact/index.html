@@ -6,6 +6,163 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Contact us</legend>
+
+
+<!--                     <p data-tooltip="Wpisz wymagany adres mailowy"><input id="email" type="text" onkeyup="validateEmail()" placeholder="E-mail" oninput="this.className = ''" name="email" required>-->
+                         <label>
+                            <input type="checkbox" name="mic" >
+                              <span class="inner-mic" >
+                                  <i class="fa fa-microphone" aria-hidden="true"></i>
+                              </span>
+                          </label>
+<!--                     </p>-->
+
+
+                <style>
+
+                    span.outer-mic {
+                          position: relative;
+                          left: 26px
+                        }
+
+                        span.inner-mic {
+                          /*position: relative;
+                            left: 160px;
+                            top: -36px;
+                        */
+                            font-size: 32px;
+                        }
+
+                        input[name=mic] + span i {
+                          transition: all 0.4s ease 0s;
+                          cursor: pointer;
+                        }
+
+
+                        input[name=mic] {
+                          display: none;
+                        }
+
+
+                        input[name=mic]:hover + span i {
+                          color: #4CAF50;
+                        }
+
+                        input[name=mic]:checked + span i {
+                          color: #f22f46;
+                        }
+
+                        .next p input[style*="display: none;"] + label{
+                            display:none;
+                        }
+
+                        .next p label {
+
+                            position: relative;
+                            right: 12px;
+                            top: -36px;
+                            float: right;
+                            font-size: 32px;
+                            height: 0px;
+                        }
+
+
+
+                </style>
+
+                <script>
+                    function validateEmail(email) {
+
+                        var email = document.getElementById('email').value;
+                        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                        if(re.test(String(email).toLowerCase())==true){
+                            document.getElementById("email").style.backgroundColor = "#cff5d1";
+                            document.getElementById("email").className = "";
+                            return true;
+                        }else{
+                            document.getElementById("email").style.backgroundColor = "#ffdddd";
+                            document.getElementById("email").className = "invalid";
+                            return false;
+                        }
+                    }
+
+
+                    function removeSpaces(string) { return string.split(' ').join(''); }
+
+                    var listapol = document.querySelectorAll('input[type=text], input[type=tel]');
+
+
+
+
+                    function emailRec() {
+
+                        var pole = document.getElementById('email');
+
+                        window.addEventListener("DOMContentLoaded", () => {
+                        const button = pole.nextElementSibling.firstElementChild;
+                        const result = pole;
+
+
+                        let listening = false;
+                        const SpeechRecognition =
+                            window.SpeechRecognition || window.webkitSpeechRecognition;
+                        if (typeof SpeechRecognition !== "undefined") {
+                            const recognition = new SpeechRecognition();
+
+                            const stop = () => {
+                            recognition.stop();
+                            };
+
+                            const start = () => {
+                            recognition.lang = 'pl-PL';
+                            recognition.start();
+                            };
+
+                            const onResult = event => {
+                            result.value = "";
+                            for (const res of event.results) {
+                                const spchtext = res[0].transcript.replace('małpa', '@')
+                                                                  .replace('małpka', '@')
+                                                                  .replace('kropka', '.')
+                                                                  .replace('podkreślnik', '_')
+                                                                  .replace('podłoga', '_');
+                                result.value = removeSpaces(result.value + spchtext);  // tu tkwi błąd na komórki
+
+                                var m4wnuke = pole.onkeyup;
+                                m4wnuke();
+                    }
+
+                                if(validateEmail(pole.value) === true){
+                                    listening ? stop(): start();
+                                    listening = !listening;
+                                    pole.nextElementSibling.firstElementChild.checked = false;
+                    }
+
+
+                            };
+                            recognition.continuous = false;
+                            recognition.interimResults = true;
+                            recognition.addEventListener("result", onResult);
+                            button.addEventListener("click", event => {
+                            listening ? stop() : start();
+                            listening = !listening;
+                            });
+                        } else {
+                            button.remove();
+                            const message = document.getElementById("message");
+                            message.removeAttribute("hidden");
+                            message.setAttribute("aria-hidden", "false");
+                        }
+
+                        });
+
+                    }
+
+                    emailRec()
+                </script>
+
+
+
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
