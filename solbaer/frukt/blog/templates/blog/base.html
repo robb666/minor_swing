@@ -31,7 +31,7 @@
       </div>
     </div>
   </nav>
-  
+
 <style>
   .card {
     box-shadow: 0 16px 48px #6a6a6b;
@@ -40,13 +40,6 @@
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
-          {% if messages %}
-            {% for message in messages %}
-              <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-              </div>
-            {% endfor %}
-          {% endif %}
 
 
           {% block content %}
