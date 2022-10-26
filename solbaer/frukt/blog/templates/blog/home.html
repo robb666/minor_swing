@@ -6,47 +6,49 @@
   <div class="container">
     <div class="row">
       <div class=" col-md-8 col-md-10 mx-auto">
-
+        <div class="site-heading">
+          <h3 class=" site-heading my-4 mt-3 text-black"> Welcome to My Blog ✍️ </h3>
+          <p class="text-dark">Django is Awesome ✨✨✨ </p>
+        </div>
       </div>
     </div>
   </div>
 </header>
-
 <div class="container">
   <div class="row">
     <!-- Blog Entries Column -->
-    {% for post in posts %}
-      <div class="col-md-7 card mb-4  mt-3 left  top">
-      <div class="card-body">
 
-        <article class="media content-section">
-          <div class="media-body">
+    <div class="col-md-12 mt-3 left">
+
+    {% block sidebar %}
+    {% include 'sidebar.html' %}
+    {% endblock sidebar %}
+
+      {% for post in posts %}
+      <div class="card mb-4">
+        <div class="card-body">
+
 
             <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-              <div class="article-metadata">
-                <small class="text-muted">{{ post.date_posted|date:"d F Y" }}</small>
-              </div>
+            <div class="article-metadata">
+              <small class="text-muted">{{ post.date_posted|date:"d F Y" }}</small>
+            </div>
 
             <p class="card-text">{{post.content|slice:":200"}}</p>
-            {% if post.image %}
-                <img width=450 src="{{ post.image.url }}">
-            {% endif %}
-            <br>
-            <br>
+              {% if post.image %}
+                  <img width=450 src="{{ post.image.url }}">
+              {% endif %}
+
+            <br><br>
+
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
-            </div>
-        </article>
-      <br><br><br>
 
-
+        </div>
+      </div>
+      {% endfor %}
 
     </div>
-    </div>
-    {% endfor %}
-    
-    {% block sidebar %}
-    {% include 'sidebar.html' %} 
-    {% endblock sidebar %}
+
   </div>
 </div>
 {%endblock%}
