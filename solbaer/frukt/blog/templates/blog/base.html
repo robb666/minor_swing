@@ -31,25 +31,52 @@
       </div>
     </div>
   </nav>
+  
+<style>
+  .card {
+    box-shadow: 0 16px 48px #6a6a6b;
+  }
+</style>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
 
 
-  {% if messages %}
-    {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}">
-        {{ message }}
+          {% block content %}
+          <!-- Content Goes here -->
+          {% endblock content %}
+        </div>
+
+        <div class="col-md-4 float-right ">
+          <div class="card my-4">
+            <div class="content-section">
+              <h4 class="card-header">Additional information</h4>
+              <div class="card-body">
+                <p class='text-muted'>
+                  <ul class="list-group">
+
+                    <li type="button" class="btn btn-dark btn-lg">Announcements</li>
+                    <li type="button" class="btn btn-dark btn-lg">Harvest calendar</li>
+                    <li type="button" class="btn btn-dark btn-lg">Delivery terms</li>
+                    <li type="button" class="btn btn-dark btn-lg">FAQ</li>
+
+                  </ul>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
       </div>
-    {% endfor %}
-  {% endif %}
-
-
-  <div class="container">
-    {% block content %}
-    <!-- Content Goes here -->
-
-
-
-    {% endblock content %}
-  </div>
+    </main>
 
   <!-- Footer -->
   <footer class="py-3 bg-grey">
