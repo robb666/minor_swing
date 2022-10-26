@@ -10,21 +10,26 @@
       <div class="row">
         <div class="col-md-8">
 
-
-
           {% block content %}{% endblock %}
         </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Additional information</h3>
-            <p class='text-muted'>
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Delivery terms</li>
-                <li class="list-group-item list-group-item-light">Harvest calendar</li>
-              </ul>
-            </p>
+        <div class="col-md-4 float-right ">
+          <div class="card my-4">
+            <div class="content-section">
+              <h4 class="card-header">Additional information</h4>
+              <div class="card-body">
+                <p class='text-muted'>
+                  <ul class="list-group">
+
+                    <li type="button" class="btn btn-dark btn-lg">Announcements</li>
+                    <li type="button" class="btn btn-dark btn-lg">Harvest calendar</li>
+                    <li type="button" class="btn btn-dark btn-lg">Delivery terms</li>
+                    <li type="button" class="btn btn-dark btn-lg">FAQ</li>
+
+                  </ul>
+
+              </div>
+
+            </div>
           </div>
         </div>
       </div>

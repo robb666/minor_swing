@@ -23,7 +23,7 @@ class PostListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
-    # template_name = 'post_detail.html'
+    template_name = 'post_detail.html'
 
 
 class PostCreateView(CreateView):
