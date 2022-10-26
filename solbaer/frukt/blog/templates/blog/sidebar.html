@@ -1,11 +1,5 @@
 {% block sidebar %}
 
-<style>
-  .card {
-    box-shadow: 0 16px 48px #6a6a6b;
-  }
-</style>
-
 <!-- Sidebar Widgets Column -->
 <style>
   .card {
@@ -16,13 +10,7 @@
       <div class="row">
         <div class="col-md-8">
 
-          {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-            </div>
-            {% endfor %}
-          {% endif %}
+
 
           {% block content %}{% endblock %}
         </div>

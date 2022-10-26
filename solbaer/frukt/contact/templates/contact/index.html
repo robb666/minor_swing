@@ -1,4 +1,4 @@
-{% extends "blog/base.html" %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
     <div class="content-section">
@@ -8,40 +8,50 @@
                 <legend class="border-bottom mb-4">Contact us</legend>
 
 
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+
 
                 <div class="form-group">
-                  <label class="col-form-label mt-4" for="name">Name</label>
-                  <input type="text" class="form-control" placeholder="Enter name" id="name">
+                    <label class="col-form-label mt-4" for="name">Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter name" name="name">
 
-                  <label for="email" class="form-label mt-4">Email address *</label>
-                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" onkeyup="validateEmail()">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <label for="email" class="form-label mt-4">Email address *</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email" required>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 
-                  <label for="inquiry" class="form-label mt-4">Inquiry *</label>
-                  <textarea class="form-control" id="inquiry" rows="3"></textarea>
+                    <label for="inquiry" class="form-label mt-4">Inquiry *</label>
+                        <textarea class="form-control" id="inquiry" name="inquiry" rows="3" required></textarea>
                 </div>
-                <br>
+
                 <p>* Required</p>
 
 
 
-                <script>
-                    function validateEmail(email) {
+<!--                <script>-->
+<!--                    function validateEmail(email) {-->
 
-                        var email = document.getElementById('email').value;
-                        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                        if(re.test(String(email).toLowerCase())==true){
-                            document.getElementById("email").style.backgroundColor = "#cff5d1";
-                            document.getElementById("email").className = "";
-                            return true;
-                        }else{
-                            document.getElementById("email").style.backgroundColor = "#ffdddd";
-                            document.getElementById("email").className = "invalid";
-                            return false;
-                        }
-                    }
+<!--                        var email = document.getElementById('email').value;-->
+<!--                        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;-->
+<!--                        if(re.test(String(email).toLowerCase())==true){-->
+<!--                            document.getElementById("email").style.backgroundColor = "#cff5d1";-->
+<!--                            document.getElementById("email").className = "";-->
+<!--                            return true;-->
+<!--                        }else{-->
+<!--                            document.getElementById("email").style.backgroundColor = "#ffdddd";-->
+<!--                            document.getElementById("email").className = "invalid";-->
+<!--                            return false;-->
+<!--                        }-->
+<!--                    }-->
 
-                </script>
+<!--                </script>-->
+
+
 
 
 

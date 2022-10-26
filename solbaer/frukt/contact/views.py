@@ -24,11 +24,12 @@ def index(request):
 
             send_mail('Zapytanie dotyczące ... nr ...',
                       'Oto wiadomość',
-                      f'{name}@Norwegia',
+                      f'',
                       ['robert.patryk.grzelak@gmail.com'],
                       html_message=html)
 
-            messages.success(request, f'{name}! Thank you for submitting an inquiry. We will get back to you ASAP.')
+            messages.success(request, f'{name + "!" if name else ""} '
+                                      f'Thank you for submitting an inquiry. We will get back to you ASAP.')
             return redirect('index')
     else:
         form = ContactForm()
