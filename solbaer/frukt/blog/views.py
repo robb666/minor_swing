@@ -16,12 +16,14 @@ class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html'
     context_object_name = 'posts'
+    queryset = Post.objects.filter(status=1)
     ordering = ['-date_posted']
     paginate_by = 4
 
 
 class PostDetailView(DetailView):
     model = Post
+    # template_name = 'post_detail.html'
 
 
 class PostCreateView(CreateView):

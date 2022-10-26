@@ -8,67 +8,22 @@
                 <legend class="border-bottom mb-4">Contact us</legend>
 
 
-<!--                     <p data-tooltip="Wpisz wymagany adres mailowy"><input id="email" type="text" onkeyup="validateEmail()" placeholder="E-mail" oninput="this.className = ''" name="email" required>-->
-                         <label>
-                            <input type="checkbox" name="mic" >
-                              <span class="inner-mic" >
-                                  <i class="fa fa-microphone" aria-hidden="true"></i>
-                              </span>
-                          </label>
-<!--                     </p>-->
+
+                <div class="form-group">
+                  <label class="col-form-label mt-4" for="name">Name</label>
+                  <input type="text" class="form-control" placeholder="Enter name" id="name">
+
+                  <label for="email" class="form-label mt-4">Email address *</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" onkeyup="validateEmail()">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+                  <label for="inquiry" class="form-label mt-4">Inquiry *</label>
+                  <textarea class="form-control" id="inquiry" rows="3"></textarea>
+                </div>
+                <br>
+                <p>* Required</p>
 
 
-                <style>
-
-                    span.outer-mic {
-                          position: relative;
-                          left: 26px
-                        }
-
-                        span.inner-mic {
-                          /*position: relative;
-                            left: 160px;
-                            top: -36px;
-                        */
-                            font-size: 32px;
-                        }
-
-                        input[name=mic] + span i {
-                          transition: all 0.4s ease 0s;
-                          cursor: pointer;
-                        }
-
-
-                        input[name=mic] {
-                          display: none;
-                        }
-
-
-                        input[name=mic]:hover + span i {
-                          color: #4CAF50;
-                        }
-
-                        input[name=mic]:checked + span i {
-                          color: #f22f46;
-                        }
-
-                        .next p input[style*="display: none;"] + label{
-                            display:none;
-                        }
-
-                        .next p label {
-
-                            position: relative;
-                            right: 12px;
-                            top: -36px;
-                            float: right;
-                            font-size: 32px;
-                            height: 0px;
-                        }
-
-
-
-                </style>
 
                 <script>
                     function validateEmail(email) {
@@ -86,87 +41,14 @@
                         }
                     }
 
-
-                    function removeSpaces(string) { return string.split(' ').join(''); }
-
-                    var listapol = document.querySelectorAll('input[type=text], input[type=tel]');
-
-
-
-
-                    function emailRec() {
-
-                        var pole = document.getElementById('email');
-
-                        window.addEventListener("DOMContentLoaded", () => {
-                        const button = pole.nextElementSibling.firstElementChild;
-                        const result = pole;
-
-
-                        let listening = false;
-                        const SpeechRecognition =
-                            window.SpeechRecognition || window.webkitSpeechRecognition;
-                        if (typeof SpeechRecognition !== "undefined") {
-                            const recognition = new SpeechRecognition();
-
-                            const stop = () => {
-                            recognition.stop();
-                            };
-
-                            const start = () => {
-                            recognition.lang = 'pl-PL';
-                            recognition.start();
-                            };
-
-                            const onResult = event => {
-                            result.value = "";
-                            for (const res of event.results) {
-                                const spchtext = res[0].transcript.replace('małpa', '@')
-                                                                  .replace('małpka', '@')
-                                                                  .replace('kropka', '.')
-                                                                  .replace('podkreślnik', '_')
-                                                                  .replace('podłoga', '_');
-                                result.value = removeSpaces(result.value + spchtext);  // tu tkwi błąd na komórki
-
-                                var m4wnuke = pole.onkeyup;
-                                m4wnuke();
-                    }
-
-                                if(validateEmail(pole.value) === true){
-                                    listening ? stop(): start();
-                                    listening = !listening;
-                                    pole.nextElementSibling.firstElementChild.checked = false;
-                    }
-
-
-                            };
-                            recognition.continuous = false;
-                            recognition.interimResults = true;
-                            recognition.addEventListener("result", onResult);
-                            button.addEventListener("click", event => {
-                            listening ? stop() : start();
-                            listening = !listening;
-                            });
-                        } else {
-                            button.remove();
-                            const message = document.getElementById("message");
-                            message.removeAttribute("hidden");
-                            message.setAttribute("aria-hidden", "false");
-                        }
-
-                        });
-
-                    }
-
-                    emailRec()
                 </script>
 
 
 
-                {{ form|crispy }}
+
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Send</button>
+                <button class="btn btn-outline-primary" type="submit">Send</button>
             </div>
         </form>
     </div>
