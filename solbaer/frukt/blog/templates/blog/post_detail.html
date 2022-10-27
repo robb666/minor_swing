@@ -6,7 +6,7 @@
     <div class="col-md-12 card mb-4  mt-3 left  top">
       <div class="card-body">
         <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
-        <small class="text-muted">{{ object.date_posted|date:"d F Y" }}</small>
+        <small class="text-muted" >{{ object.date_posted|date:"d F Y" }}</small>
         <br><br>
         <p class="card-text ">{{ object.content | safe }}</p>
         {% if post.image %}
