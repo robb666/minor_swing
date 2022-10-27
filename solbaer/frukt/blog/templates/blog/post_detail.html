@@ -11,7 +11,7 @@
         <br><br>
         <p class="card-text ">{{ object.content | safe }}</p>
         {% if post.image %}
-            <img width=580 src="{{ post.image.url }}">
+            <img style="max-width:100%;" src="{{ post.image.url }}">
         {% endif %}
       </div>
     </div>

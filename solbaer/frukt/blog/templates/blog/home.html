@@ -26,24 +26,25 @@
       <div class="card mb-4">
         <div class="card-body">
 
-
             <h2><a class="article-title" href="{% url 'post-detail' post.slug %}">{{ post.title }}</a></h2>
+
             <div class="article-metadata">
               <small class="button" style="color:#333333;">{{ post.date_posted|date:"d F Y" }}</small>
             </div>
 
             <p class="card-text">{{post.content|slice:":200"}}</p>
               {% if post.image %}
-                  <img width=450 style="max-width:20%;" src="{{ post.image.url }}">
+                  <img style="max-width:50%;" src="{{ post.image.url }}">
               {% endif %}
 
             <br><br>
 
-            <a href="{% url 'post-detail' post.slug  %}" class="btn btn-primary" style="color:orange;">Read More &rarr;</a>
+            <a href="{% url 'post-detail' post.slug  %}" class="btn btn-primary" >Read More &rarr;</a>
 
         </div>
       </div>
       {% endfor %}
+
     </div>
   </div>
 </div>
