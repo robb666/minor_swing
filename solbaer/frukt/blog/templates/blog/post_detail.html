@@ -8,13 +8,15 @@
       <div class="card-body">
         <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
           <small class="button" style="color:#333333;">{{ object.date_posted|date:"d F Y" }}</small>
-        <br><br>
-        <p class="card-text ">{{ object.content | safe }}</p>
-        {% if post.image %}
-            <img style="max-width:100%;" src="{{ post.image.url }}">
-        {% endif %}
+            <br><br>
+              <p class="lead">{{ object.content | safe }}</p>
+                {% if post.image %}
+                    <img style="max-width:100%;" src="{{ post.image.url }}">
+                {% endif %}
+            <br><br>
+          <a href="{% url 'blog-home' %}" class="btn btn-primary" >&larr;  Back</a>
+        </div>
       </div>
-    </div>
 
   </div>
 </div>
