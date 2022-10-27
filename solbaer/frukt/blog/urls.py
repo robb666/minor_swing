@@ -12,9 +12,11 @@ from contact.views import index
 
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
-    path('<slug:slug>/', PostDetailView.as_view(), name='post-detail'),
+
     path('about/', views.about, name='blog-about'),
     path('contact/', index, name='form-contact'),
+    path('<slug:slug>/', PostDetailView.as_view(), name='post-detail')
+
 ]
 
 

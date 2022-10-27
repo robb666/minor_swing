@@ -4,12 +4,13 @@ from .models import Post
 from django import forms
 
 
-# Create your views here.
-def home(request):
-    context = {
-        'posts': Post.objects.all()
-    }
-    return render(request, 'blog/home.html', context)
+# # Create your views here.
+
+# def home(request):
+#     context = {
+#         'posts': Post.objects.all()
+#     }
+#     return render(request, 'blog/home.html', context)
 
 
 class PostListView(ListView):
@@ -23,7 +24,7 @@ class PostListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
-    # template_name = 'post_detail.html'
+    template_name = 'post_detail.html'
 
 
 class PostCreateView(CreateView):
