@@ -19,7 +19,7 @@ class PostListView(ListView):
     context_object_name = 'posts'
     queryset = Post.objects.filter(status=1)
     ordering = ['-date_posted']
-    paginate_by = 2
+    paginate_by = 1
 
 
 class PostDetailView(DetailView):
