@@ -44,7 +44,8 @@ class SearchBar(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('query')
-        object_list = Post.objects.filter(Q(title_icontains=query) | Q(content__icontains=query))
+        object_list = Post.objects.filter(Q(title__icontains=query) |
+                                          Q(content__icontains=query))
         return object_list
 
 
