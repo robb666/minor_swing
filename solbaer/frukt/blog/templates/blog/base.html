@@ -42,13 +42,26 @@
           <a class="nav-link active" href="{% url 'form-contact' %}">Contact</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+
+
+      <form class="d-flex" action="{% url 'blog-search' %}">
+
+
+        <input class="form-control me-sm-2" name="query" type="text" placeholder="Search in posts">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Find</button>
       </form>
+
+
     </div>
   </div>
 </nav>
+
+
+<!--  <div class="my-1">-->
+
+<!--    <a class="link" href="/">{{ post.title }}</a>-->
+<!--</div>-->
+
 
 <style>
   .card {
