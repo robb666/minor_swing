@@ -11,7 +11,7 @@ from contact.views import index
 urlpatterns = [
 
     path('', PostListView.as_view(), name='blog-home'),
-    # path('search/', PostListView.searchbar().as_view(), name='blog-home'),
+
 
 
     path('search/', SearchBar.as_view(), name='blog-search'),

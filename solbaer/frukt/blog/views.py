@@ -5,18 +5,8 @@ from django.db.models import Q
 from django import forms
 
 
-# # Create your views here.
-
-def home(request):
-    context = {
-        'posts': Post.objects.all()
-    }
-    return render(request, 'blog/home.html', context)
-
-
-
+# Create your views here.
 class PostListView(ListView):
-
     model = Post
     template_name = 'blog/home.html'
     context_object_name = 'posts'
@@ -24,17 +14,8 @@ class PostListView(ListView):
     ordering = ['-date_posted']
     paginate_by = 2
 
-    # TODO
-    # def get_context_data(self, **kwargs):
-    #     data = Post.objects.all()
-    #     if 'query' in self.request.GET:
-    #         q = self.request.GET['query']
-    #         data = Post.objects.filter(Q(content__icontains=q))
-    #     return render(self.request, 'blog/search.html', {'data': data})
-
 
 class SearchBar(ListView):
-
     model = Post
     template_name = 'blog/search.html'
     context_object_name = 'posts'
@@ -46,30 +27,7 @@ class SearchBar(ListView):
         query = self.request.GET.get('q')
         object_list = Post.objects.filter(Q(title__icontains=query) |
                                           Q(content__icontains=query))
-
         return object_list
-
-
-
-# def searchbar(request):
-#
-#     query = request.GET.get('query')
-#
-#     if query and query != '':
-#         results = Post.objects.filter(content__icontains=query)
-#         print('success')
-#     else:
-#         results = Post.objects.filter(status=1)
-#         results = results.date
-#
-#     context = {
-#         'posts': results,
-#     }
-#     return render(request, 'blog/search.html', context)
-
-
-
-
 
 
 class PostDetailView(DetailView):
