@@ -43,9 +43,10 @@ class SearchBar(ListView):
     paginate_by = 2
 
     def get_queryset(self):
-        query = self.request.GET.get('query')
+        query = self.request.GET.get('q')
         object_list = Post.objects.filter(Q(title__icontains=query) |
                                           Q(content__icontains=query))
+
         return object_list
 
 
