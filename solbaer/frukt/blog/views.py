@@ -32,6 +32,24 @@ class SearchBar(ListView):
         return ''
 
 
+# class SearchBar(UpdateView):
+#     model = Post
+#     template_name = 'blog/search.html'
+#     context_object_name = 'posts'
+#     queryset = Post.objects.filter(status=1)
+#     paginate_by = 4
+#
+#     def get_queryset(self):
+#         q = self.request.GET.get('q')
+#         print(q)
+#         if q:
+#             object_list = Post.objects.filter(
+#                 Q(title__icontains=q) |
+#                 Q(content__icontains=q)).order_by('-date_posted')
+#             return object_list
+#         return ''
+
+
 class PostDetailView(DetailView):
     model = Post
     template_name = 'post_detail.html'
