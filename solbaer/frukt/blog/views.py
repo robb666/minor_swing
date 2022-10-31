@@ -51,8 +51,8 @@ def about(request):
 
 
 def calendar(request):
-    image = Post.objects.get(id=35)
-    # context = {
-    #     'image': Post.objects.get(id=33)
-    # }
+    image = Post.objects.all()
+    context = {
+        'image': image
+    }
     return render(request, 'blog/harvest_calendar.html', {'post': image})
