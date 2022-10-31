@@ -13,6 +13,7 @@ urlpatterns = [
     path('search/', SearchBar.as_view(), name='blog-search'),
     path('about/', views.about, name='blog-about'),
     path('contact/', index, name='form-contact'),
+    path('harvest_calendar/', views.calendar, name='side-calendar'),
     path('<slug:slug>/', PostDetailView.as_view(), name='post-detail')
 ]
 
