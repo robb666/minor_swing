@@ -13,5 +13,6 @@ def highlight_search(text, search):
     return mark_safe(highlighted)
 
 
+# TODO highlight search
 # <h2><a class="article-title" href="{% url 'post-detail' post.slug %}">{{ post.title|highlight_search:query }}</a></h2>
 # <p class="card-text">{{post.content|slice:":200"|highlight_search:query}}</p>

@@ -49,7 +49,7 @@ def about(request):
 
 
 def calendar(request):
-    image = Post.objects.get(id=43)
+    image = Post.objects.get(image=43)
     # image = {
     #     'image': image
     # }
