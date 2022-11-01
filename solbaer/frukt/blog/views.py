@@ -43,13 +43,13 @@ class PostCreateView(CreateView):
 
 
 def about(request):
-    image = Post.objects.get(id=35)
+    image = 'https://django-frukt-files.s3.eu-west-1.amazonaws.com/images/sprz_d.jpg'
 
-    return render(request, 'blog/about.html', {'post': image})
+    return render(request, 'blog/about.html', {'image': image})
 
 
 def calendar(request):
-    image = Post.objects.get(image=43)
+    image = 'https://django-frukt-files.s3.eu-west-1.amazonaws.com/images/calendar.webp'
     # image = {
     #     'image': image
     # }
