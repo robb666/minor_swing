@@ -44,15 +44,13 @@ class PostCreateView(CreateView):
 
 def about(request):
     image = Post.objects.get(id=35)
-    # context = {
-    #     'image': Post.objects.get(id=33)
-    # }
+
     return render(request, 'blog/about.html', {'post': image})
 
 
 def calendar(request):
-    image = Post.objects.all()
-    context = {
-        'image': image
-    }
-    return render(request, 'blog/harvest_calendar.html', {'post': image})
+    image = Post.objects.get(id=43)
+    # image = {
+    #     'image': image
+    # }
+    return render(request, 'blog/harvest_calendar.html', {'image': image})
