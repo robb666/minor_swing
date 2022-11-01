@@ -44,6 +44,7 @@ class PostCreateView(CreateView):
 
 def about(request):
     image = 'https://django-frukt-files.s3.eu-west-1.amazonaws.com/images/sprz_d.jpg'
+    # image = Post.objects.get(id=43)
 
     return render(request, 'blog/about.html', {'image': image})
 
