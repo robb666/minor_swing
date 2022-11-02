@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 
 
@@ -14,9 +14,7 @@
                     <img style="max-width:100%;" src="{{ post.image.url }}">
                 {% endif %}
             <br><br>
-
-            <a href="{% url 'blog-home' %}" class="btn btn-primary" >&larr;  Back</a>
-
+              <a href="{{ base_url }}" class="btn btn-primary" >&larr;  Back</a>
         </div>
       </div>
 

@@ -28,6 +28,7 @@ class SearchBar(ListView):
             object_list = Post.objects.filter(
                 Q(title__icontains=query) |
                 Q(content__icontains=query)).order_by('-date_posted')
+
             return object_list
         return ''
 
@@ -35,6 +36,12 @@ class SearchBar(ListView):
 class PostDetailView(DetailView):
     model = Post
     template_name = 'post_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PostDetailView, self).get_context_data(**kwargs)
+        context['base_url'] = self.request.META['HTTP_REFERER']
+
+        return context
 
 
 class PostCreateView(CreateView):
