@@ -60,7 +60,6 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            # '/home/robb/Desktop/PROJEKTY/minor_swing/solbaer/frukt/blog/templates/blog/'],
             BASE_DIR / 'blog/templates/blog'],
         'APP_DIRS': True,
         'OPTIONS': {
