@@ -31,7 +31,7 @@
               <small class="button" style="color:#333333;">{{ post.date_posted|date:"d F Y" }}</small>
             </div>
             <br>
-            <p class="card-text">{{post.content|slice:":200"}}</p>
+            <p class="card-text">{{post.content|slice:":200"|safe}}</p>
               {% if post.image %}
                   <img style="max-width:50%;" src="{{ post.image.url }}">
               {% endif %}

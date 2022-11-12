@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'contact',
     'storages',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -154,5 +155,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'root')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+RUN_SERVER_PORT = 8080
+
 
 # print(BASE_DIR / 'blog/templates/blog')
