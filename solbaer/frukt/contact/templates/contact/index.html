@@ -7,7 +7,6 @@
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Contact us</legend>
 
-
                 {% if messages %}
                     {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
@@ -16,19 +15,18 @@
                     {% endfor %}
                 {% endif %}
 
-
                 <div class="form-group">
-                    <label class="col-form-label mt-4" for="name">Name</label>
-                        <input type="text" id="name" class="form-control" placeholder="Enter name" name="name">
+                    <label class="col-form-label mt-4">Name</label>
+                        {{ form.name }}
 
-                    <label for="email" class="form-label mt-4">Email address *</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email" required>
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <label class="form-label mt-4">Email address *</label>
+                        {{ form.email }}
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <br>
 
-                    <label for="inquiry" class="form-label mt-4">Inquiry *</label>
-                        <textarea class="form-control" id="inquiry" name="inquiry" rows="3" required></textarea>
+                    <label class="form-label mt-4">Inquiry *</label>
+                        {{ form.inquiry }}
                 </div>
-
                 <p>* Required</p>
 
 
@@ -52,6 +50,21 @@
 <!--                </script>-->
 
 
+
+
+<!--    <div class="g-recaptcha" data-sitekey="<KEY>"></div>-->
+<!--    <script>-->
+<!--        grecaptcha.ready(function() {-->
+<!--            grecaptcha.execute('<KEY>', {action: 'contact'})-->
+<!--            .then(function(token) {-->
+<!--                ginput = document.createElement('input');-->
+<!--                ginput.type = "hidden";-->
+<!--                ginput.name = "g-recaptcha-response";-->
+<!--                ginput.value = token;-->
+<!--                document.getElementById("cform").appendChild(ginput);-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
 
 
 

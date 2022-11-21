@@ -1,17 +1,19 @@
 from django import forms
-from django.db import models
+
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100, widget=forms.Textarea, required=False)
-    # email = forms.EmailField(),
+    name = forms.CharField(max_length=31, label='Your name',
+                           widget=forms.TextInput(attrs={'class': "form-control",
+                                                         'id': 'firstname',
+                                                         'placeholder': 'Your name'}), required=False)
 
-    email = forms.EmailField(
-        widget=forms.TextInput(attrs={"id": "email"}),
-    )
-    # record = forms.BooleanField()
-    inquiry = forms.CharField(widget=forms.Textarea(attrs={'rows': 10}))
+    email = forms.EmailField(error_messages={'invalid': 'Please check your email.'},
+                             widget=forms.TextInput(attrs={'class': "form-control",
+                                                           'id': 'email',
+                                                           'placeholder': 'Enter email'}), required=True)
 
-
-
-
-
+    inquiry = forms.CharField(min_length=5, error_messages={'invalid': 'Message is too short'},
+                              widget=forms.Textarea(attrs={'class': "form-control",
+                                                           'id': 'inquiry',
+                                                           'placeholder': 'Content...',
+                                                           'rows': 5}), required=True)
