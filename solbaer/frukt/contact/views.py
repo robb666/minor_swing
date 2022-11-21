@@ -40,11 +40,11 @@ def index(request):
                                       f'Thank you for submitting an inquiry. We will get back to you ASAP.')
             return redirect('index')
 
-        elif err := form.errors['email']:
-            messages.error(request, err, 'danger')
+        elif email_err := form.errors['email']:
+            messages.error(request, email_err, 'danger')
 
-        elif err := form.errors['inquiry']:
-            messages.error(request, err, 'danger')
+        elif msg_err := form.errors['inquiry']:
+            messages.error(request, msg_err, 'danger')
 
     else:
         form = ContactForm()
