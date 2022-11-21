@@ -5,9 +5,9 @@ from django.template.loader import render_to_string
 from django.contrib import messages
 from django.core.validators import validate_email
 
+
 # Create your views here.
 def index(request):
-
     if request.method == 'POST':
         form = ContactForm(request.POST)
 
