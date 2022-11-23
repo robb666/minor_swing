@@ -10,7 +10,7 @@ from django.core.validators import validate_email
 def index(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
-
+        print(form)
         if form.is_valid():
             """captcha"""
             # recaptcha_response = request.POST.get('g-recaptcha-response')
@@ -40,11 +40,11 @@ def index(request):
                                       f'Thank you for submitting an inquiry. We will get back to you ASAP.')
             return redirect('index')
 
-        elif email_err := form.errors['email']:  # if ??
-            messages.error(request, email_err, 'danger')
+        if email_err := form.errors.get('email'):
+            messages.success(request, email_err, 'danger')
 
-        elif msg_err := form.errors['inquiry']:  # if ??
-            messages.error(request, msg_err, 'danger')
+        if msg_err := form.errors.get('inquiry'):
+            messages.success(request, msg_err, 'danger')
 
     else:
         form = ContactForm()
