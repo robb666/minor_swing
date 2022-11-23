@@ -10,7 +10,6 @@ from django.core.validators import validate_email
 def index(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        print(form)
         if form.is_valid():
             """captcha"""
             # recaptcha_response = request.POST.get('g-recaptcha-response')
