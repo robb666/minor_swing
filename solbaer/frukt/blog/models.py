@@ -10,13 +10,18 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=200, unique=True)
-    content = RichTextField(blank=True, null=True)
-    # content = models.TextField()
+    title = models.CharField(max_length=100, default='')
+    content = RichTextField(blank=True, null=True, default='')
     date_posted = models.DateTimeField(default=timezone.now)
     image = models.ImageField(null=True, blank=True, upload_to='images')
     status = models.IntegerField(choices=STATUS, default=1)
+
+    slug = models.SlugField(max_length=200, unique=True, default='')
+    page_title = models.CharField(max_length=60, blank=True, null=True, default='')
+    meta_tags = models.CharField(max_length=60, blank=True, null=True, default='')
+    keywords = models.CharField(max_length=60, blank=True, null=True, default='')
+    description = models.TextField(max_length=160, blank=True, null=True, default='')
+    head = models.TextField(blank=True, null=True, default='')
 
     def __str__(self):
         return self.title

@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html xmlns="http://www.w3.org/1999/html" lang="en">
 
 <head>
-  <title>Solbær</title>
+  <meta charset="utf-8">
+
+
+  <title>{{ post.page_title }}</title>
+
+  <!-- SEO Meta Tags-->
+  <meta name="meta tags" content="{{ post.meta_tags }}">
+  <meta name="keywords" content="{{ post.keywords }}">
+  <meta name="description" content="{{ post.description }}">
+  <meta name="author" content="RBTY">
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <!-- Bootstrap cdn -->
-<!--   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/journal/bootstrap.min.css">-->
-  <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/solar/bootstrap.min.css">-->
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sketchy/bootstrap.min.css">-->
-
-
 
   {% load static %}
   <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
