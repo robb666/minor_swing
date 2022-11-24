@@ -28,12 +28,10 @@
                         {{ form.inquiry }}
                 </div>
                 <p>* Required</p>
-
-
+                
 
 <!--                <script>-->
 <!--                    function validateEmail(email) {-->
-
 <!--                        var email = document.getElementById('email').value;-->
 <!--                        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;-->
 <!--                        if(re.test(String(email).toLowerCase())==true){-->
@@ -46,9 +44,7 @@
 <!--                            return false;-->
 <!--                        }-->
 <!--                    }-->
-
 <!--                </script>-->
-
 
 
 
@@ -66,9 +62,6 @@
 <!--        });-->
 <!--    </script>-->
 
-
-
-
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-primary btn-lg" type="submit" style="float: right;">Send</button>
@@ -83,7 +76,6 @@
         <div id='map' style="max-width:100%; height: 460px;"></div>
 
                 <script>
-
                     mapboxgl.accessToken = '{{ access_token }}';
                     const map = new mapboxgl.Map({
                         container: 'map', // container ID
