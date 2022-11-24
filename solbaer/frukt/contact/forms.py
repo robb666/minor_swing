@@ -2,7 +2,7 @@ from django import forms
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=31,  # label='Name', .label_tag
+    name = forms.CharField(max_length=31,  # label='Name', .label_tag error_messages={'invalid': 'Message is too short'}
                            widget=forms.TextInput(attrs={'class': "form-control",
                                                          'id': 'firstname',
                                                          'placeholder': 'Your name'}), required=False)
@@ -12,7 +12,7 @@ class ContactForm(forms.Form):
                                                            'id': 'email',
                                                            'placeholder': 'Enter email'}), required=True)
 
-    inquiry = forms.CharField(min_length=5, error_messages={'invalid': 'Message is too short'},
+    inquiry = forms.CharField(error_messages={'invalid': 'Message is too short'}, min_length=5,
                               widget=forms.Textarea(attrs={'class': "form-control",
                                                            'id': 'inquiry',
                                                            'placeholder': 'Content...',
