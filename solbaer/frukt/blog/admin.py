@@ -5,7 +5,7 @@ from .models import Post
 # Register your models here.
 class PostAdmin(admin.ModelAdmin):
     readonly_fields = ('id',)
-    list_display = ('title', 'slug', 'status', 'date_posted')
+    list_display = ('title', 'status', 'slug', 'meta_tags', 'keywords')
     list_filter = ('status',)
     search_fields = ['title', 'content']
 
