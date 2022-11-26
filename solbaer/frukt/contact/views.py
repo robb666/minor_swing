@@ -40,21 +40,17 @@ def index(request):
                                       f'Thank you for submitting an inquiry. We will get back to you ASAP.')
             return redirect('index')
 
-        # if email_err := form.errors.get('email'):
-        #     messages.success(request, email_err, 'danger')
-        print(form.errors)
-        if form.errors.get('email'):
-            messages.success(request, '', 'form-control is-invalid')
+        if email_err := form.errors.get('email'):
+            messages.error(request, email_err, 'danger')
 
         if msg_err := form.errors.get('inquiry'):
-            messages.success(request, msg_err, 'danger')
+            messages.error(request, msg_err, 'danger')
 
         return render(request, 'contact/index.html', {'form': form,
-                                                      'invalid': 'is-invalid',
                                                       'access_token': settings.MAPBOX_ACCESS_TOKEN})
 
-    # else:
-    #     form = ContactForm()
+    else:
+        form = ContactForm()
 
-    return render(request, 'contact/index.html', {'form': ContactForm(),
+    return render(request, 'contact/index.html', {'form': form,
                                                   'access_token': settings.MAPBOX_ACCESS_TOKEN})
