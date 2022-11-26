@@ -67,8 +67,4 @@ def calendar(request):
 
 
 def faq(request):
-    # image = 'https://django-frukt-files.s3.eu-west-1.amazonaws.com/images/calendar.webp'
-    # image = {
-    #     'image': image
-    # }
     return render(request, 'blog/FAQ.html')
