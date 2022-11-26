@@ -14,6 +14,7 @@ urlpatterns = [
     path('about/', views.about, name='blog-about'),
     path('contact/', index, name='form-contact'),
     path('harvest_calendar/', views.calendar, name='side-calendar'),
+    path('faq/', views.faq, name='side-faq'),
     path('<slug:slug>/', PostDetailView.as_view(), name='post-detail')
 ]
 

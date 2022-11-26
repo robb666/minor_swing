@@ -40,7 +40,8 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
-        context['base_url'] = self.request.META['HTTP_REFERER']
+        htp_rerefer = self.request.META.get('HTTP_REFERER')
+        context['base_url'] = htp_rerefer if htp_rerefer else '/'
 
         return context
 
@@ -63,3 +64,7 @@ def calendar(request):
     #     'image': image
     # }
     return render(request, 'blog/harvest_calendar.html', {'image': image})
+
+
+def faq(request):
+    return render(request, 'blog/FAQ.html')

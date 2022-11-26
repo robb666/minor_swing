@@ -41,10 +41,13 @@ def index(request):
             return redirect('index')
 
         if email_err := form.errors.get('email'):
-            messages.success(request, email_err, 'danger')
+            messages.error(request, email_err, 'danger')
 
         if msg_err := form.errors.get('inquiry'):
-            messages.success(request, msg_err, 'danger')
+            messages.error(request, msg_err, 'danger')
+
+        return render(request, 'contact/index.html', {'form': form,
+                                                      'access_token': settings.MAPBOX_ACCESS_TOKEN})
 
     else:
         form = ContactForm()
