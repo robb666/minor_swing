@@ -40,7 +40,8 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
-        context['base_url'] = self.request.META['HTTP_REFERER']
+        htp_rerefer = self.request.META.get('HTTP_REFERER')
+        context['base_url'] = htp_rerefer if htp_rerefer else '/'
 
         return context
 
