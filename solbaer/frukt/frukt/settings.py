@@ -27,6 +27,7 @@ SECRET_KEY = os.environ.get("SETTINGS_SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'contact',
     'storages',
     'ckeditor',
@@ -84,7 +86,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        'CONN_MAX_AGE': 60,
+        'CONN_MAX_AGE': 120,
     }
 }
 
@@ -162,4 +164,7 @@ STATICFILES_DIRS = (
 RUN_SERVER_PORT = 8080
 
 
-# print(BASE_DIR / 'blog/templates/blog')
+## deployment
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = False

@@ -9,3 +9,5 @@ constants.py
 posts.txt
 *.jpg
 solbaer/frukt/media/profile_pics/calendar.webp
+\static_root
+/static_root
