@@ -8,7 +8,6 @@ from django.conf import settings
 
 # Create your views here.
 def index(request):
-    print(settings.MAPBOX_ACCESS_TOKEN)
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
