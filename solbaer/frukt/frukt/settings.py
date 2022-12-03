@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SETTINGS_SECRET_KEY")
+SECRET_KEY = os.environ.get("SETTINGS_SECRET_KEY", "*")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
@@ -167,7 +167,7 @@ RUN_SERVER_PORT = 8080
 ## deployment
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
-# SECURE_SSL_REDIRECT = False
+SECURE_SSL_REDIRECT = False
 
 LOGGING = {
     'version': 1,
@@ -188,7 +188,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/minor_swing/log.log',
+            'filename': '/minor_swing/logi.log',
             'formatter': 'simple'
         },
     },
