@@ -26,6 +26,7 @@ SECRET_KEY = os.environ.get("SETTINGS_SECRET_KEY", "*")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=1))
 # DEBUG = False
+print(DEBUG)
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
@@ -142,7 +143,7 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 MAPBOX_ACCESS_TOKEN = os.environ.get("MAPBOX_ACCESS_TOKEN")
@@ -169,12 +170,6 @@ RUN_SERVER_PORT = 8080
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = False
-
-
-print(os.environ.get('AWS_ACCESS_KEY_ID'))
-print(os.environ.get('AWS_SECRET_ACCESS_KEY'))
-print(os.environ.get('AWS_STORAGE_BUCKET_NAME'))
-
 
 
 # LOGGING = {
