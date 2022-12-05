@@ -8,6 +8,8 @@ RUN pip install --upgrade pip && pip install -r /requirements.txt
 ENV PORT=8080
 #EXPOSE 8888
 #CMD python manage.py runserver
+RUN adduser -D robb
+USER robb
 CMD gunicorn frukt.wsgi:application --bind 0.0.0.0:$PORT
 
 

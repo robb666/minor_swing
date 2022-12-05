@@ -21,14 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SETTINGS_SECRET_KEY", "*")
+SECRET_KEY = os.environ.get("SETTINGS_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=1))
-# DEBUG = False
 print(DEBUG)
 
-# ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
@@ -139,7 +137,7 @@ EMAIL_PORT = 587
 
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_S3_BUCKET_NAME_STATIC = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
 # AWS_S3_BUCKET_NAME_STATIC
 
 AWS_S3_FILE_OVERWRITE = False
@@ -151,14 +149,14 @@ MAPBOX_ACCESS_TOKEN = os.environ.get("MAPBOX_ACCESS_TOKEN")
 
 
 # MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_root')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
