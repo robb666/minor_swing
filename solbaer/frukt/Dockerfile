@@ -1,4 +1,5 @@
 FROM python:3.11.0-alpine3.17
+#ENV PATH="/scripts:${PATH}"
 ENV PYTHONUNBUFFERED=1
 COPY ./requirements.txt /requirements.txt
 RUN mkdir minor_swing
@@ -10,4 +11,5 @@ ENV PORT=8080
 #CMD python manage.py runserver
 RUN adduser -D robb
 USER robb
+CMD ["entrypoint.sh"]
 CMD gunicorn frukt.wsgi:application --bind 0.0.0.0:$PORT
