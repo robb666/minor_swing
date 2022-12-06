@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SETTINGS_SECRET_KEY", 'changeme')
 DEBUG = bool(int(os.environ.get('DEBUG', default=1)))
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
 if ALLOWED_HOSTS_ENV:
     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
