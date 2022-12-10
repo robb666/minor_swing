@@ -4,6 +4,9 @@ ENV PYTHONUNBUFFERED=1
 COPY ./requirements.txt /requirements.txt
 RUN mkdir minor_swing
 ADD . /minor_swing/
+
+#COPY ./scripts /scripts
+
 WORKDIR /minor_swing/
 RUN pip install --upgrade pip && \
     pip install -r /requirements.txt && \
@@ -11,7 +14,10 @@ RUN pip install --upgrade pip && \
     mkdir -p /vol/web/static && \
     mkdir -p /vol/web/media && \
     chown -R robb:robb /vol && \
-    chmod -R 755 /vol
+    chmod -R 755 /vol && \
+#    chmod -R +x /scripts
+
+#ENV PATH="/scripts:/py/bin:${PATH}"
 
 USER robb
 ENV PORT=8080
