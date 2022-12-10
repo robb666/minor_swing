@@ -1,7 +1,7 @@
 version: "3.11"
 
 services:
-  app:
+  django_gunicorn:
     build:
       context: .
     restart: always
@@ -10,6 +10,7 @@ services:
     environment:
       - SECRET_KEY=${SECRET_KEY}
       - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+      - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
 
   proxy:
     build:

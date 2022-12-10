@@ -1,7 +1,7 @@
 version: '3.11'
 
 services:
-  app:
+  django_gunicorn:
     build:
       context: .
     command: >
