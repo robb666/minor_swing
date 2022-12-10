@@ -6,7 +6,7 @@ COPY ./uwsgi_params /etc/nginx/uwsgi_params
 COPY ./run.sh /run.sh
 
 ENV LISTEN_PORT=8080
-ENV APP_HOST=APP
+ENV APP_HOST=robb
 ENV APP_PORT=9000
 
 USER root
