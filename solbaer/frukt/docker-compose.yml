@@ -1,23 +1,17 @@
-version: "3.11"
+version: '3.11'
 
 services:
   app:
     build:
       context: .
-    restart: always
-    volumes:
-      - static-data:/vol/web
-    environment:
-      - SECRET_KEY=${SECRET_KEY}
-      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
-
-  proxy:
-    build:
-      context: ./proxy
-    restart: always
-    depends_on:
-      - app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8080"
     ports:
-      - 80:8080
+      - 8080:8080
     volumes:
-      - static-data:/vol/static
+      - ./app:/app
+      - ./data/web:/vol/web
+    environment:
+      - SECRET_KEY=devsecretkey
+      - DEBUG=1
+
