@@ -13,7 +13,7 @@ RUN python -m venv /py && \
     mkdir -p /vol/web/static && \
     chown -R robb:robb /vol && \
     chmod -R 755 /vol && \
-    chmod -R +x /scripts
+    chmod -R +x /vol
 ENV PATH="/scripts:/py/bin:${PATH}"
 ENV PORT=8080
 USER robb
