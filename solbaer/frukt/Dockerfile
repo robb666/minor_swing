@@ -7,7 +7,12 @@ ADD . /minor_swing/
 WORKDIR /minor_swing/
 RUN pip install --upgrade pip && \
     pip install -r /requirements.txt && \
-    adduser -D robb
+    adduser -D robb && \
+    mkdir -p /vol/web/static && \
+    mkdir -p /vol/web/media && \
+    chown -R robb:robb /vol && \
+    chmod -R 755 /vol
+
 USER robb
 ENV PORT=8080
 #EXPOSE 8888
