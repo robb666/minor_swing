@@ -7,8 +7,6 @@ services:
     restart: always
     volumes:
       - static-data:/vol/web
-    environment:
-      - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
 
   proxy:
     build:
