@@ -164,9 +164,9 @@ STATIC_URL = '/static/static/'
 STATIC_ROOT = '/vol/web/static'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'vol/web/static')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
 
 RUN_SERVER_PORT = 8080
 

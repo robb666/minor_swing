@@ -18,6 +18,6 @@ RUN mkdir -p /vol/static && \
 
 VOLUME /vol/static
 
-#USER nginx
+USER nginx
 
 CMD ["/run.sh"]
