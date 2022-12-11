@@ -20,3 +20,4 @@ USER robb
 #EXPOSE 8888
 CMD ["run.sh"]
 CMD gunicorn frukt.wsgi:application --bind 0.0.0.0:$PORT
+
