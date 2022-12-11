@@ -1,6 +1,3 @@
-upstream django {
-	server django_gunicorn:8080;
-}
 
 server {
     listen $(LISTEN_PORT);
