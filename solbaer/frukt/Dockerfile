@@ -9,7 +9,7 @@ WORKDIR /app/
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
     /py/bin/pip install -r /requirements.txt && \
-    adduser --disabled-password --no-create-home robb && \
+    adduser --disabled-password --no-create-home app && \
     mkdir -p /vol/web/static && \
     chown -R app:app /vol && \
     chmod -R 755 /vol && \
