@@ -5,7 +5,7 @@ COPY ./default.conf.tpl /etc/nginx/default.conf.tpl
 COPY ./run.sh /run.sh
 
 ENV LISTEN_PORT=8080
-ENV APP_HOST=robb
+ENV APP_HOST=app
 ENV APP_PORT=9000
 
 USER root
