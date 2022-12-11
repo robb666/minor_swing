@@ -160,8 +160,8 @@ MAPBOX_ACCESS_TOKEN = os.environ.get("MAPBOX_ACCESS_TOKEN")
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/minor_swing/solbaer/frukt/static/'
-STATIC_ROOT = '/vol/web/static'
+STATIC_URL = '/static/static/'
+# STATIC_ROOT = '/vol/web/static'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'vol/web/static')
 
 STATICFILES_DIRS = (
