@@ -3,17 +3,20 @@ upstream django {
 }
 
 server {
-    listen 80;
+	listen 80 default_server;
+    listen [::]:80 default_server;
 
-    location / {
-        proxy_pass http://django;
+    location /favicon.ico {
+        access_log off;
+        log_not_found off;
     }
 
-    location /static {
-        alias /vol/static;
-    }
+	location / {
+		proxy_pass http://django;
+	}
 
-    location @s3{
-        proxy_pass https://django-frukt-files.s3.eu-west-1.amazonaws.com/images/;
-   }
+    location /static/ {
+        autoindex on;
+		alias /static/;
+	}
 }
