@@ -3,7 +3,11 @@ upstream django {
 }
 
 server {
-    listen $(LISTEN_PORT);
+    listen 80;
+
+    location / {
+        proxy_pass http://django;
+    }
 
     location /static {
         alias /vol/static;
