@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  django_gunicorn:
+    build:
+      context: .
+    restart: always
+    volumes:
+      - static:/static
+    environment:
+      - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+
+  proxy:
+    build:
+      context: ./proxy
+    restart: always
+    depends_on:
+      - django_gunicorn
+    ports:
+      - "80:8080"
+    volumes:
+      - static:/static
+
+volumes:
+  static:
