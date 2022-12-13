@@ -6,8 +6,6 @@ services:
       context: .
     volumes:
       - static:/static
-    ports:
-      - "8080:8080"
     environment:
       - DEBUG=${DEBUG}
       - SETTINGS_SECRET_KEY=${SETTINGS_SECRET_KEY}
@@ -18,9 +16,10 @@ services:
       - AWS_STORAGE_BUCKET_NAME=${AWS_STORAGE_BUCKET_NAME}
       - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
       - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+    ports:
+      - "8080:8080"
 #    env_file:
 #      - .env
-
 
   nginx:
     build: ./proxy
