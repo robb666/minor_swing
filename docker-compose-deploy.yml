@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  django_gunicorn:
+    build:
+      context: .
+    restart: always
+    volumes:
+      - static:/static
+    environment:
+      - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
