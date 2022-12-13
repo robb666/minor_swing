@@ -17,8 +17,8 @@ services:
       - AWS_ACCESS_KEY_ID
       - AWS_SECRET_ACCESS_KEY
       - AWS_STORAGE_BUCKET_NAME
-      - MAPBOX_ACCESS_TOKEN
-      - ALLOWED_HOSTS
+#      - MAPBOX_ACCESS_TOKEN
+#      - ALLOWED_HOSTS
 
 
   nginx:
