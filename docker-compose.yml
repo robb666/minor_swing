@@ -2,7 +2,8 @@ version: '3.9'
 
 services:
   django_gunicorn:
-    build: .
+    build:
+      context: .
     stop_signal: SIGINT
     volumes:
       - static:/static
