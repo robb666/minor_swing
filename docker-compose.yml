@@ -21,7 +21,7 @@ services:
       - ALLOWED_HOSTS=${ALLOWED_HOSTS}
 
 
-  nginx:
+  proxy:
     build: ./proxy
     volumes:
       - static:/static
