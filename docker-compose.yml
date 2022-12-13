@@ -2,10 +2,12 @@ version: '3.9'
 
 services:
   django_gunicorn:
-    build:
-      context: .
+    build: .
+    stop_signal: SIGINT
     volumes:
       - static:/static
+    ports:
+      - "8080:8080"
     environment:
       - DEBUG=${DEBUG}
       - SETTINGS_SECRET_KEY=${SETTINGS_SECRET_KEY}
@@ -14,10 +16,18 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_STORAGE_BUCKET_NAME=${AWS_STORAGE_BUCKET_NAME}
-#      - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
-#      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
-    ports:
-      - "8080:8080"
-#    env_file:
-#      - .env
+      - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
 
+
+  nginx:
+    build: ./proxy
+    volumes:
+      - static:/static
+    ports:
+      - "80:8080"
+    depends_on:
+      - django_gunicorn
+
+volumes:
+  static:
