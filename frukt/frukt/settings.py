@@ -160,20 +160,21 @@ MAPBOX_ACCESS_TOKEN = os.environ.get("MAPBOX_ACCESS_TOKEN")
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/static/'
-STATIC_ROOT = '/vol/web/static'
+STATIC_ROOT = '/static/'
+STATIC_URL = '/static/'
+
 # STATIC_ROOT = os.path.join(BASE_DIR, 'vol/web/static')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
 
 RUN_SERVER_PORT = 8080
 
 
 ## deployment
 CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
 SECURE_SSL_REDIRECT = False
 
 

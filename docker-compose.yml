@@ -2,16 +2,10 @@ version: '3.9'
 
 services:
   django_gunicorn:
-    build:
-      context: .
-    command: >
-      sh -c "python manage.py migrate
-             python manage.py runserver 0.0.0.0:8080"
-    ports:
-      - "8080:8080"
     volumes:
-      - ./app:/app
-      - ./data/web:/vol/web
+      - static:/static
+#    env_file:
+#      - .env
     environment:
       - DEBUG=${DEBUG}
       - SETTINGS_SECRET_KEY=${SETTINGS_SECRET_KEY}
@@ -20,5 +14,21 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_STORAGE_BUCKET_NAME=${AWS_STORAGE_BUCKET_NAME}
+      - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
       - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+    build:
+      context: .
+    ports:
+      - "8080:8080"
 
+  nginx:
+    build: ./proxy
+    volumes:
+      - static:/static
+    ports:
+      - "80:8080"
+    depends_on:
+      - django_gunicorn
+
+volumes:
+  static:
