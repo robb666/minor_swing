@@ -2,7 +2,7 @@ from django import forms
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=31, error_messages={'invalid': 'Thank you for submitting an inquiry. We will get back to you ASAP.'},
+    name = forms.CharField(max_length=31,  # error_messages={'invalid': 'Thank you.'},
                            widget=forms.TextInput(attrs={'class': "form-control",
                                                          'id': 'firstname',
                                                          'placeholder': 'Your name'}), required=False)
