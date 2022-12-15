@@ -35,18 +35,8 @@ def index(request):
                       ['robert.patryk.grzelak@gmail.com'],
                       html_message=html)
 
-            # messages.add_message(request,
-            #                      messages.SUCCESS,
-            #                      f'{name + "!" if name else ""} '
-            #                      f'Thank you for submitting an inquiry. We will get back to you ASAP.')
-
-            # messages.error(request, 'dupa')
-
-
             messages.success(request, f'{name + "!" if name else ""} '
-                                      f'Thank you for submitting an inquiry. We will get back to you ASAPASAP.')
-
-            # return redirect('contact/index')
+                                      f'Thank you for submitting an inquiry. We will get back to you ASAP.')
 
             return render(request, 'contact/index.html', {'form': form,
                                                           'access_token': settings.MAPBOX_ACCESS_TOKEN})
