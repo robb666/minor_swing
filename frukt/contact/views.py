@@ -40,8 +40,11 @@ def index(request):
             #                      f'{name + "!" if name else ""} '
             #                      f'Thank you for submitting an inquiry. We will get back to you ASAP.')
 
-            messages.error(request, f'{name + "!" if name else ""} '
+
+
+            messages.success(request, f'{name + "!" if name else ""} '
                                       f'Thank you for submitting an inquiry. We will get back to you ASAP.', 'success')
+
             return redirect('index')
 
         if email_err := form.errors.get('email'):
