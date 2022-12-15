@@ -40,12 +40,16 @@ def index(request):
             #                      f'{name + "!" if name else ""} '
             #                      f'Thank you for submitting an inquiry. We will get back to you ASAP.')
 
+            # messages.error(request, 'dupa')
 
 
             messages.success(request, f'{name + "!" if name else ""} '
-                                      f'Thank you for submitting an inquiry. We will get back to you ASAP.', 'success')
+                                      f'Thank you for submitting an inquiry. We will get back to you ASAPASAP.')
 
-            return redirect('index')
+            # return redirect('contact/index')
+
+            return render(request, 'contact/index.html', {'form': form,
+                                                          'access_token': settings.MAPBOX_ACCESS_TOKEN})
 
         if email_err := form.errors.get('email'):
             messages.error(request, email_err, 'danger')
