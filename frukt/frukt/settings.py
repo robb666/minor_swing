@@ -174,7 +174,7 @@ RUN_SERVER_PORT = 8080
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 ## deployment
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = False
 
