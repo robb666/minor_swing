@@ -180,7 +180,7 @@ CSRF_TRUSTED_ORIGINS = ['http://ec2-16-171-20-189.eu-north-1.compute.amazonaws.c
 
 ## deployment
 CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
 SECURE_SSL_REDIRECT = False
 
 
