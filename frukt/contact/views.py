@@ -37,6 +37,7 @@ def index(request):
 
             messages.success(request, f'{name + "!" if name else ""} '
                                       f'Thank you for submitting an inquiry. We will get back to you ASAP.')
+            form = ContactForm()
 
             return render(request, 'contact/index.html', {'form': form,
                                                           'access_token': settings.MAPBOX_ACCESS_TOKEN})
