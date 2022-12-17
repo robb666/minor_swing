@@ -3,6 +3,14 @@
 python manage.py migrate --noinput
 python manage.py collectstatic --noinput
 
-DJANGO_SUPERUSER_PASSWORD=$SUPER_USER_PASSWORD python manage.py createsuperuser --username $SUPER_USER_NAME --email $SUPER_USER_EMAIL --noinput
+#DJANGO_SUPERUSER_PASSWORD=$SUPER_USER_PASSWORD python manage.py createsuperuser --username $SUPER_USER_NAME --email $SUPER_USER_EMAIL --noinput
+
+if [ "$DJANGO_SUPERUSER_USERNAME" ]
+then
+    python manage.py createsuperuser \
+        --noinput \
+        --username "$DJANGO_SUPERUSER_USERNAME" \
+        --email "$DJANGO_SUPERUSER_EMAIL"
+fi
 
 gunicorn frukt.wsgi:application --bind 0.0.0.0:8080 --timeout 0
