@@ -183,7 +183,7 @@ CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = False
 
-SESSION_COOKIE_DOMAIN = 'http://ec2-16-171-20-189.eu-north-1.compute.amazonaws.com'
+
 
 
 # LOGGING = {
