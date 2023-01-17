@@ -21,7 +21,7 @@ class Post(models.Model):
     meta_tags = models.CharField(max_length=60, blank=True, null=True, default='')
     keywords = models.CharField(max_length=60, blank=True, null=True, default='')
     description = models.TextField(max_length=160, blank=True, null=True, default='')
-    head = models.TextField(blank=True, null=True, default='')
+    head = models.TextField(blank=True, null=True, default='')  # --> header? richTextField
 
     def __str__(self):
         return self.title
