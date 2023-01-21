@@ -137,14 +137,32 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = 587
 
 
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-# AWS_S3_BUCKET_NAME_STATIC
+USE_S3 = True
+# USE_S3 = os.getenv('USE_S3') == 'True'
 
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+if USE_S3:
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+    AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
+    AWS_DEFAULT_ACL = 'public-read'
+
+    AWS_S3_FILE_OVERWRITE = True
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.eu-west-1.amazonaws.com'
+    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+
+    # S3 static settings
+    AWS_STATIC_LOCATION = 'static'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_STATIC_LOCATION}/'
+    STATICFILES_STORAGE = 'frukt.storages.StaticStorage'
+
+    PUBLIC_MEDIA_LOCATION = ''  # <-- images
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+    DEFAULT_FILE_STORAGE = 'frukt.storages.MediaStorage'
+
+else:
+    STATIC_ROOT = '/static/'
+    STATIC_URL = '/static/'
+    # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 MAPBOX_ACCESS_TOKEN = os.environ.get("MAPBOX_ACCESS_TOKEN")
@@ -160,11 +178,15 @@ MAPBOX_ACCESS_TOKEN = os.environ.get("MAPBOX_ACCESS_TOKEN")
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = '/static/'
-STATIC_URL = '/static/'
+
+""""""
+# STATIC_ROOT = '/static/'
+# STATIC_URL = '/static/'
+""""""
+
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#
+
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, 'static'),
 # )

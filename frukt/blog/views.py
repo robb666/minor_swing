@@ -52,18 +52,11 @@ class PostCreateView(CreateView):
 
 
 def about(request):
-    image = 'https://django-frukt-files.s3.eu-west-1.amazonaws.com/images/sprz_d.jpg'
-    # image = Post.objects.get(id=43)
-
-    return render(request, 'blog/about.html', {'image': image})
+    return render(request, 'blog/about.html')
 
 
 def calendar(request):
-    image = 'https://django-frukt-files.s3.eu-west-1.amazonaws.com/images/calendar.webp'
-    # image = {
-    #     'image': image
-    # }
-    return render(request, 'blog/harvest_calendar.html', {'image': image})
+    return render(request, 'blog/harvest_calendar.html')
 
 
 def faq(request):

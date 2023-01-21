@@ -13,7 +13,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100, default='')
     content = RichTextField(blank=True, null=True, default='')
     date_posted = models.DateTimeField(default=timezone.now)
-    image = models.ImageField(null=True, blank=True, upload_to='images')
+    image = models.ImageField(null=True, blank=True, upload_to='blog_images')
     status = models.IntegerField(choices=STATUS, default=1)
 
     slug = models.SlugField(max_length=200, unique=True, default='')

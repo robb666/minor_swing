@@ -4,18 +4,19 @@ services:
   django_gunicorn:
     build:
       context: .
-    stop_signal: SIGINT
-    volumes:
-      - static:/static
+    stop_signal: SIGQUIT
+#    volumes:
+#      - static:/static
     ports:
-      - "8080:8080"
+      - "8080:80"
     env_file:
       - .env
 
   proxy:
     build: ./proxy
-    volumes:
-      - static:/static
+    stop_signal: SIGQUIT
+#    volumes:
+#      - static:/static
     ports:
       - "80:80"
     depends_on:

@@ -1,12 +1,13 @@
 {% extends "blog/base.html" %}
 {% block content %}
+{% load static %}
 <legend class="border-bottom mb-4">Harvest calendar</legend>
     <h1>For this year</h1>
     <br><br>
     <div class="content-section">
         <div class="media">
 
-            <img style="max-width:102%;" src="{{ image }}">
+            <img style="max-width:102%;" src="{% static 'harvest_calendar.webp' %}">
 
         </div>
     </div>
