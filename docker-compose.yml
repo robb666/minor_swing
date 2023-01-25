@@ -5,22 +5,35 @@ services:
     build:
       context: .
     stop_signal: SIGQUIT
-#    volumes:
-#      - static:/static
     ports:
       - "8080:80"
+    restart: always
     env_file:
       - .env
 
   proxy:
     build: ./proxy
     stop_signal: SIGQUIT
-#    volumes:
-#      - static:/static
+    volumes:
+      - web-root:/var/www/html
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
     ports:
       - "80:80"
+      - "443:443"
+    restart: always
     depends_on:
       - django_gunicorn
 
-volumes:
-  static:
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - web-root:/var/www/html
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+    depends_on:
+      - proxy
+    command: certonly --webroot --webroot-path=/var/www/html --email ubezpieczenia.magro@gmail.com --agree-tos --no-eff-email --staging -d blackcurrant-wholesale.com -d www.blackcurrant-wholesale.com
+
+#volumes:
+#  static:
