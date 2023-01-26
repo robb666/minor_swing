@@ -15,9 +15,9 @@ services:
     build: ./proxy
     stop_signal: SIGQUIT
     volumes:
-      - web-root:/var/www/html
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
+      - /var/www/html:/var/www/html
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
     ports:
       - "80:80"
       - "443:443"
@@ -28,12 +28,12 @@ services:
   certbot:
     image: certbot/certbot
     volumes:
-      - web-root:/var/www/html
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
+      - /var/www/html:/var/www/html
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
     depends_on:
       - proxy
-    command: certonly --webroot --webroot-path=/var/www/html --email ubezpieczenia.magro@gmail.com --agree-tos --no-eff-email --staging -d blackcurrant-wholesale.com -d www.blackcurrant-wholesale.com
+    command: certonly --dry-run --webroot --webroot-path=/var/www/html --email ubezpieczenia.magro@gmail.com --agree-tos --no-eff-email --staging -d blackcurrant-wholesale.com -d www.blackcurrant-wholesale.com
 
 #volumes:
 #  static:
