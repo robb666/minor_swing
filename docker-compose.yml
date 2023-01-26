@@ -33,7 +33,7 @@ services:
       - /var/lib/letsencrypt:/var/lib/letsencrypt
     depends_on:
       - proxy
-    command: certonly --dry-run --webroot --webroot-path=/var/www/html --email ubezpieczenia.magro@gmail.com --agree-tos --no-eff-email --staging -d blackcurrant-wholesale.com -d www.blackcurrant-wholesale.com
+    command: certonly --webroot --webroot-path=/var/www/html --email ubezpieczenia.magro@gmail.com --agree-tos --no-eff-email --staging -d blackcurrant-wholesale.com -d www.blackcurrant-wholesale.com
 
 #volumes:
 #  static:
