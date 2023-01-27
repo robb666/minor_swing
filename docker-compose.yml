@@ -7,30 +7,30 @@ services:
     stop_signal: SIGQUIT
     ports:
       - "8080:80"
-#    restart: always
+    restart: always
     env_file:
       - .env
 
   proxy:
     build: ./proxy
     stop_signal: SIGQUIT
-    volumes:
-      - /var/www/html:/var/www/html
-      - /etc/letsencrypt:/etc/letsencrypt
-      - /var/lib/letsencrypt:/var/lib/letsencrypt
+#    volumes:
+#      - /var/www/html:/var/www/html
+#      - /etc/letsencrypt:/etc/letsencrypt
+#      - /var/lib/letsencrypt:/var/lib/letsencrypt
     ports:
       - "80:80"
       - "443:443"
-#    restart: always
+    restart: always
     depends_on:
       - django_gunicorn
 
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - /var/www/html:/var/www/html
-      - /etc/letsencrypt:/etc/letsencrypt
-      - /var/lib/letsencrypt:/var/lib/letsencrypt
-    depends_on:
-      - proxy
-    command: certonly --webroot --webroot-path=/var/www/html --email ubezpieczenia.magro@gmail.com --agree-tos --no-eff-email --staging -d blackcurrant-wholesale.com -d www.blackcurrant-wholesale.com
+#  certbot:
+#    image: certbot/certbot
+#    volumes:
+#      - /var/www/html:/var/www/html
+#      - /etc/letsencrypt:/etc/letsencrypt
+#      - /var/lib/letsencrypt:/var/lib/letsencrypt
+#    depends_on:
+#      - proxy
+#    command: certonly --webroot --webroot-path=/var/www/html --email ubezpieczenia.magro@gmail.com --agree-tos --no-eff-email --staging -d blackcurrant-wholesale.com -d www.blackcurrant-wholesale.com
