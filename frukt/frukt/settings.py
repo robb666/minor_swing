@@ -196,8 +196,8 @@ RUN_SERVER_PORT = 8080
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
-CSRF_TRUSTED_ORIGINS = ['http://ec2-16-171-20-189.eu-north-1.compute.amazonaws.com',
-                        'http://16.171.20.189']
+CSRF_TRUSTED_ORIGINS = ['http://ec2-13-49-98-79.eu-north-1.compute.amazonaws.com',
+                        'http://13.49.98.79']
 
 
 ## deployment
