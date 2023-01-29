@@ -130,11 +130,11 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EMAIL_USE_TLS = False
+EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-EMAIL_PORT = 587
+EMAIL_PORT = 443
 
 
 USE_S3 = True
@@ -196,14 +196,16 @@ RUN_SERVER_PORT = 8080
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
-CSRF_TRUSTED_ORIGINS = ['http://ec2-13-49-98-79.eu-north-1.compute.amazonaws.com',
-                        'http://13.49.98.79']
+CSRF_TRUSTED_ORIGINS = [
+                        # 'http://ec2-13-49-98-79.eu-north-1.compute.amazonaws.com',
+                        # 'http://13.49.98.79',
+                        'https://blackcurrant-wholesale.com']
 
 
 ## deployment
-CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = False
-SECURE_SSL_REDIRECT = False
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
 
 
 
