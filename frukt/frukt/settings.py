@@ -196,10 +196,7 @@ RUN_SERVER_PORT = 8080
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
-CSRF_TRUSTED_ORIGINS = [
-                        # 'http://ec2-13-49-98-79.eu-north-1.compute.amazonaws.com',
-                        # 'http://13.49.98.79',
-                        'https://blackcurrant-wholesale.com']
+CSRF_TRUSTED_ORIGINS = ['https://blackcurrant-wholesale.com']
 
 
 ## deployment
