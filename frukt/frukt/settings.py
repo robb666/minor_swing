@@ -196,13 +196,13 @@ RUN_SERVER_PORT = 8080
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
-CSRF_TRUSTED_ORIGINS = ['https://blackcurrant-wholesale.com/', 'http://13.49.98.79/']
+CSRF_TRUSTED_ORIGINS = ['https://blackcurrant-wholesale.com/']
 
 
 ## deployment
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
+SECURE_SSL_REDIRECT = False
 
 
 
