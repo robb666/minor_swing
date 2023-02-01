@@ -201,7 +201,7 @@ CSRF_TRUSTED_ORIGINS = ['https://blackcurrant-wholesale.com', 'https://blackcurr
 
 
 ## deployment
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = False
 SECURE_SSL_REDIRECT = False
 
