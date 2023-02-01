@@ -134,7 +134,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-EMAIL_PORT = 443
+EMAIL_PORT = 587
 
 
 USE_S3 = True
@@ -197,13 +197,14 @@ RUN_SERVER_PORT = 8080
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
-CSRF_TRUSTED_ORIGINS = ['https://blackcurrant-wholesale.com/']
+CSRF_TRUSTED_ORIGINS = ['https://blackcurrant-wholesale.com/',
+                        'https://www.blackcurrant-wholesale.com/']
 
 
 ## deployment
-CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = False
-SECURE_SSL_REDIRECT = False
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
 
 
 
