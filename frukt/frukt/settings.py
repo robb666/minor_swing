@@ -198,8 +198,8 @@ RUN_SERVER_PORT = 8080
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 CSRF_TRUSTED_ORIGINS = ['https://blackcurrant-wholesale.com',
-                        'https://blackcurrant-wholesale.com/',
-                        'https://d10ptt26niqwpv.cloudfront.net/']
+                        'https://www.blackcurrant-wholesale.com',
+                        'https://d10ptt26niqwpv.cloudfront.net']
 
 # CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1']
 
