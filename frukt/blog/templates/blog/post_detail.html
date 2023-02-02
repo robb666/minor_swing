@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-12 card mb-4  mt-3 left  top">
       <div class="card-body">
-        <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+        <h1>{% block title %} {{ object.page_title }} {% endblock title %}</h1>
           <small class="button" style="color:#333333;">{{ object.date_posted|date:"d F Y" }}</small>
             <br><br>
               <p class="lead">{{ object.content | safe }}</p>

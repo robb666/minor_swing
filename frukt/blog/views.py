@@ -26,7 +26,7 @@ class SearchBar(ListView):
         query = self.request.GET.get('q')
         if query:
             object_list = Post.objects.filter(
-                Q(title__icontains=query) |
+                Q(page_title__icontains=query) |
                 Q(content__icontains=query)).order_by('-date_posted')
 
             return object_list
@@ -48,7 +48,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['page_title', 'content']
 
 
 def about(request):

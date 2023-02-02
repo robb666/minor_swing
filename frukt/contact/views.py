@@ -4,10 +4,10 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.contrib import messages
 from django.conf import settings
-from django.views.decorators.csrf import csrf_exempt
+# from django.views.decorators.csrf import csrf_exempt
 
 
-@csrf_exempt
+# @csrf_exempt
 def index(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)

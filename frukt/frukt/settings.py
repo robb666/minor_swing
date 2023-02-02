@@ -35,6 +35,7 @@ if ALLOWED_HOSTS_ENV:
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'contact',
     'storages',
     'ckeditor',
+    'adminsortable2',
 ]
 
 MIDDLEWARE = [

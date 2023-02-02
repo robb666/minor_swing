@@ -27,7 +27,7 @@
       <div class="card mb-4">
         <div class="card-body">
 
-            <h2><a class="article-title" href="{% url 'post-detail' post.slug %}">{{ post.title }}</a></h2>
+            <h2><a class="article-title" href="{% url 'post-detail' post.slug %}">{{ post.page_title }}</a></h2>
 
             <div class="article-metadata">
               <small class="button" style="color:#333333;">{{ post.date_posted|date:"d F Y" }}</small>

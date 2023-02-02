@@ -1,11 +1,12 @@
 from django.contrib import admin
+from adminsortable2.admin import SortableAdminMixin
 from .models import Post
 
 
 # Register your models here.
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(SortableAdminMixin, admin.ModelAdmin):
     readonly_fields = ('id',)
-    list_display = ('title', 'status', 'slug', 'meta_tags', 'keywords')
+    list_display = ('page_title', 'slug', 'date_posted', 'description', 'status', 'order')
     list_filter = ('status',)
     search_fields = ['title', 'content']
 
