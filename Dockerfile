@@ -11,4 +11,8 @@ COPY ./frukt /app
 WORKDIR /app
 
 COPY ./entrypoint.sh /
+
+RUN ["apk", "update"]
+RUN ["apk", "add", "nano"]
+
 ENTRYPOINT ["sh", "/entrypoint.sh"]
