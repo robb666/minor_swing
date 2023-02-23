@@ -14,23 +14,9 @@ services:
   proxy:
     build: ./proxy
     stop_signal: SIGQUIT
-#    volumes:
-#      - /var/www/html:/var/www/html
-#      - /etc/letsencrypt:/etc/letsencrypt
-#      - /var/lib/letsencrypt:/var/lib/letsencrypt
     ports:
       - "80:80"
       - "443:443"
     restart: always
     depends_on:
       - django_gunicorn
-
-#  certbot:
-#    image: certbot/certbot
-#    volumes:
-#      - /var/www/html:/var/www/html
-#      - /etc/letsencrypt:/etc/letsencrypt
-#      - /var/lib/letsencrypt:/var/lib/letsencrypt
-#    depends_on:
-#      - proxy
-#    command: certonly --webroot --webroot-path=/var/www/html --email ubezpieczenia.magro@gmail.com --agree-tos --no-eff-email --staging -d blackcurrant-wholesale.com -d www.blackcurrant-wholesale.com

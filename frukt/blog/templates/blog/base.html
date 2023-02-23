@@ -4,10 +4,15 @@
 <head>
   <meta charset="utf-8">
 
+  {% if post.page_title %}
+    <title>{{ post.page_title }}</title>
+  {% else %}
+    <title>Black Currant Wholesale</title>
+  {% endif %}
 
-  <title>{{ post.page_title }}</title>
 
   <!-- SEO Meta Tags-->
+
   <meta name="meta tags" content="{{ post.meta_tags }}">
   <meta name="keywords" content="{{ post.keywords }}">
   <meta name="description" content="{{ post.description }}">
