@@ -17,3 +17,4 @@ solbaer/min_swing.zip
 .env
 solbaer/frukt/frukt/.env
 frukt/db.sqlite3
+frukt/db.sqlite3
