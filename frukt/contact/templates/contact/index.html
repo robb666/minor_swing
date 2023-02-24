@@ -4,7 +4,7 @@
         <form action="" method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Contact us</legend>
+                <legend class="border-bottom mb-4">Contact us via e-mail</legend>
 
                 {% if messages %}
                     {% for message in messages %}
@@ -29,47 +29,23 @@
                 <p>* Required</p>
 
 
-<!--                <script>-->
-<!--                    function validateEmail(email) {-->
-<!--                        var email = document.getElementById('email').value;-->
-<!--                        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;-->
-<!--                        if(re.test(String(email).toLowerCase())==true){-->
-<!--                            document.getElementById("email").style.backgroundColor = "#cff5d1";-->
-<!--                            document.getElementById("email").className = "";-->
-<!--                            return true;-->
-<!--                        }else{-->
-<!--                            document.getElementById("email").style.backgroundColor = "#ffdddd";-->
-<!--                            document.getElementById("email").className = "invalid";-->
-<!--                            return false;-->
-<!--                        }-->
-<!--                    }-->
-<!--                </script>-->
-
-
-
-<!--    <div class="g-recaptcha" data-sitekey="<KEY>"></div>-->
-<!--    <script>-->
-<!--        grecaptcha.ready(function() {-->
-<!--            grecaptcha.execute('<KEY>', {action: 'contact'})-->
-<!--            .then(function(token) {-->
-<!--                ginput = document.createElement('input');-->
-<!--                ginput.type = "hidden";-->
-<!--                ginput.name = "g-recaptcha-response";-->
-<!--                ginput.value = token;-->
-<!--                document.getElementById("cform").appendChild(ginput);-->
-<!--            });-->
-<!--        });-->
-<!--    </script>-->
-
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-primary btn-lg" type="submit" style="float: right;">Send</button>
             </div>
         </form>
+
         <br><br><br>
+        <legend class="border-bottom mb-4">Phone numbers</legend>
+            <div class="form-group">
+                <a href="tel:+48606271169"><button class="btn btn-outline-primary btn-lg" type="submit" style="float: right;">Call Robert +48 606 271 169</button></a>
+            </div>
+            <div class="form-group">
+                <a href="tel:+48726216822"><button class="btn btn-outline-primary btn-lg" type="submit" style="float: left;">Call Krzysiek +48 726 216 822</button></a>
+            </div>
+        <br><br><br><br><br>
 
-
-            <legend class="border-bottom mb-4">Where are we located?</legend>
+            <legend class="border-bottom mb-4">Our location</legend>
             <a id="directions" href="https://www.google.com/maps/dir//Braciejowice+54,+24-335+Braciejowice/@51.1791325,21.7991395,4958m/data=!3m1!1e3!4m9!4m8!1m0!1m5!1m1!1s0x472284be2a3eb5b1:0xa663fe0c10f8eea!2m2!1d21.8172209!2d51.1777283!3e0" target=”_blank”>
                 <H5 style="display:inline">Poland, 24-335 Braciejowice 54</H5>
             </a>
