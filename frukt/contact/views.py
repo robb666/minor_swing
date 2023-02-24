@@ -30,9 +30,9 @@ def index(request):
                                      'content': inquiry,
                                      })
 
-            send_mail('Zapytanie dotyczące ... nr ...',
-                      'Oto wiadomość',
-                      f'',
+            send_mail(f'Zapytanie od {name}',
+                      'Wiadomość:',
+                      f'black-currant@stronka',
                       ['blackcurrant.wholesale@gmail.com'],
                       html_message=html)
 
