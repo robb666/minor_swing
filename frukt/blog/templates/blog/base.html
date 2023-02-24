@@ -11,7 +11,11 @@
   {% endif %}
 
   <!-- SEO -->
-  <meta name="description" content="{{ post.description }}">
+  {% if post.description %}
+    <meta name="description" content="{{ post.description }}">
+  {% else %}
+    <meta name="description" content="Black currant wholesale, where black currant sales market, black currant to buy bulk, which currant, here to buy black currant for fruit industry, price">
+  {% endif %}
   <meta name="author" content="rbty">
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
