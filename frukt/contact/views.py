@@ -33,7 +33,7 @@ def index(request):
             send_mail('Zapytanie dotyczące ... nr ...',
                       'Oto wiadomość',
                       f'',
-                      ['robert.patryk.grzelak@gmail.com'],
+                      ['blackcurrant.wholesale@gmail.com'],
                       html_message=html)
 
             messages.success(request, f'{name + "!" if name else ""} '
