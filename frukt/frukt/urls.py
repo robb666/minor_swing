@@ -16,14 +16,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from contact.views import index
+from django.contrib.sitemaps.views import sitemap
+from blog.sitemaps import BlogSitemap
+from blog.sitemaps import StaticViewSitemap
+from contact.sitemaps import ContactSitemap
 from django.conf import settings
 from django.conf.urls.static import static
 
 
+sitemaps = {
+    'StaticSitemap': StaticViewSitemap,
+    'ContactSitemap': ContactSitemap,
+    'BlogSitemap': BlogSitemap,
+}
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('blog.urls')),
     path('contact/', index, name='index'),
+    path('admin/', admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 # if settings.DEBUG:

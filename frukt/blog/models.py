@@ -8,7 +8,6 @@ from ckeditor.fields import RichTextField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-# Create your models here.
 class Post(models.Model):
     page_title = models.CharField(max_length=60, default='')
     slug = models.SlugField(max_length=60, unique=True, default='')
@@ -28,5 +27,5 @@ class Post(models.Model):
     # def __str__(self):
     #     return f'{self.user}'
 
-    # def get_absolute_url(self):
-    #     return reverse('post-detail', kwargs={'pk': self.pk})
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'slug': self.slug})
