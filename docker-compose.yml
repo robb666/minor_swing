@@ -4,19 +4,17 @@ services:
   django_gunicorn:
     build:
       context: .
-    stop_signal: SIGQUIT
     ports:
       - "8080:80"
     restart: always
     env_file:
       - .env
     volumes:
-      - /frukt/db.sqlite3:/frukt/db.sqlite3
+      - ./frukt/db.sqlite3:/app/db.sqlite3
 
 
   proxy:
     build: ./proxy
-    stop_signal: SIGQUIT
     ports:
       - "80:80"
       - "443:443"

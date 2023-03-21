@@ -208,9 +208,9 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 CSRF_TRUSTED_ORIGINS = ['https://blackcurrant-wholesale.com',
                         'https://www.blackcurrant-wholesale.com',
                         'https://d10ptt26niqwpv.cloudfront.net']
-#                         # 'http://localhost']
 
-# CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1']
+
+# CSRF_TRUSTED_ORIGINS = ['http://localhost']
 
 
 ## deployment
