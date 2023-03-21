@@ -43,12 +43,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'django.contrib.sitemaps',
     'contact',
     'storages',
     'ckeditor',
     'adminsortable2',
 ]
+
+SITE_ID = 1
+SITE_NAME = 'Minor Swing'
+SITE_DOMAIN = 'blackcurrant-wholesale.com'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
