@@ -10,6 +10,9 @@ services:
     restart: always
     env_file:
       - .env
+    volumes:
+      - ${PWD}/frukt/db.sqlite3:/frukt/db.sqlite3
+
 
   proxy:
     build: ./proxy
