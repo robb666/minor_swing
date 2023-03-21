@@ -1,7 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 from .models import Post
-from itertools import chain
 
 
 class StaticViewSitemap(Sitemap):
