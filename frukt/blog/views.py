@@ -51,6 +51,10 @@ class PostCreateView(CreateView):
     fields = ['page_title', 'content']
 
 
+def pricing(request):
+    return render(request, 'blog/pricing.html')
+
+
 def about(request):
     return render(request, 'blog/about.html')
 

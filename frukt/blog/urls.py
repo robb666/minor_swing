@@ -10,6 +10,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
     path('search/', SearchBar.as_view(), name='blog-search'),
+    path('pricing/', views.pricing, name='blog-pricing'),
     path('about/', views.about, name='blog-about'),
     path('contact/', index, name='form-contact'),
     path('harvest_calendar/', views.calendar, name='side-calendar'),

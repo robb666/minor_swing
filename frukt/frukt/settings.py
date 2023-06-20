@@ -210,7 +210,8 @@ CSRF_TRUSTED_ORIGINS = ['https://blackcurrant-wholesale.com',
                         'https://d10ptt26niqwpv.cloudfront.net']
 
 
-# CSRF_TRUSTED_ORIGINS = ['http://localhost']
+# CSRF_TRUSTED_ORIGINS = ['http://localhost',
+#                         'http://127.0.0.1:8080']
 
 
 ## deployment
