@@ -10,7 +10,7 @@
             <br><br>
               <p class="lead">{{ object.content | safe }}</p>
                 {% if post.image %}
-                    <img style="max-width:100%;" src="{{ post.image.url }}">
+                    <img alt="Blog image" width="328" height="185" src="{{ post.image.url }}">
                 {% endif %}
             <br><br>
               <a href="{{ base_url }}" class="btn btn-primary" >&larr;  Back</a>
