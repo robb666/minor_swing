@@ -35,7 +35,7 @@
             <br>
             <p class="card-text">{{post.content|slice:":200"|safe}}</p>
               {% if post.image %}
-                  <img style="max-width:50%;" src="{{ post.image.url }}">
+                  <img alt="Blog image" width="328" height="185" src="{{ post.image.url }}">
               {% endif %}
 
             <br><br>
