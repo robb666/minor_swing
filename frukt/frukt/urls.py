@@ -20,6 +20,8 @@ from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import BlogSitemap
 from blog.sitemaps import StaticViewSitemap
 from contact.sitemaps import ContactSitemap
+from django.views.generic import RedirectView
+from django.contrib.staticfiles.storage import staticfiles_storage
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -35,6 +37,7 @@ urlpatterns = [
     path('', include('blog.urls')),
     path('contact/', index, name='index'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('static/favicon.ico'))),
 ]
 
 # if settings.DEBUG:
