@@ -3,7 +3,6 @@ from .forms import ContactForm
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.contrib import messages
-from django.conf import settings
 # from django.views.decorators.csrf import csrf_exempt
 
 
@@ -40,8 +39,7 @@ def index(request):
                                       f'Thank you for submitting an inquiry. We will get back to you ASAP.')
             form = ContactForm()
 
-            return render(request, 'contact/index.html', {'form': form,
-                                                          'access_token': settings.MAPBOX_ACCESS_TOKEN})
+            return render(request, 'contact/index.html', {'form': form})
 
         if email_err := form.errors.get('email'):
             messages.error(request, email_err, 'danger')
@@ -49,11 +47,9 @@ def index(request):
         if msg_err := form.errors.get('inquiry'):
             messages.error(request, msg_err, 'danger')
 
-        return render(request, 'contact/index.html', {'form': form,
-                                                      'access_token': settings.MAPBOX_ACCESS_TOKEN})
+        return render(request, 'contact/index.html', {'form': form})
 
     else:
         form = ContactForm()
 
-    return render(request, 'contact/index.html', {'form': form,
-                                                  'access_token': settings.MAPBOX_ACCESS_TOKEN})
+    return render(request, 'contact/index.html', {'form': form})

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Post
 from django.db.models import Q
+from django.conf import settings
 from django import forms
 
 
@@ -57,6 +58,10 @@ def pricing(request):
 
 def about(request):
     return render(request, 'blog/about.html')
+
+
+def location(request):
+    return render(request, 'blog/location.html', {'access_token': settings.MAPBOX_ACCESS_TOKEN})
 
 
 def calendar(request):
