@@ -13,7 +13,7 @@ class PostListView(ListView):
     context_object_name = 'posts'
     queryset = Post.objects.filter(status=1)
     ordering = ['-date_posted']
-    paginate_by = 2
+    paginate_by = 3
 
 
 class SearchBar(ListView):
@@ -58,6 +58,10 @@ def pricing(request):
 
 def about(request):
     return render(request, 'blog/about.html')
+
+
+def gallery(request):
+    return render(request, 'blog/gallery.html')
 
 
 def location(request):
