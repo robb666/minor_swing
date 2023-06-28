@@ -4,7 +4,7 @@
 <!-- SEO -->
 {% block seo %}
   <title>Black currants fields</title>
-  <meta name="description" content="Black currants pictures, field of black currants, black currants juice production, currants crop">
+  <meta name="description" content="Black currants field pictures, black currants crop visual, black currants juice production">
 {% endblock seo %}
 
 {% block headcontent %}
@@ -12,6 +12,26 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+  <style>
+    .col-12 img {
+      opacity: 0.7;
+      cursor: pointer;
+      margin: 2rem;
+      width: 100%;
+    }
+
+    .col-12 img:hover {
+      opacity: 1;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    @media (max-width: 688px) {
+        .carousel-item>img {
+            max-height: 146px;
+        }
+    }
+  </style>
 {% endblock headcontent %}
 
 {% block content %}
@@ -19,49 +39,26 @@
 
 <br>
 <legend class="border-bottom mb-4">Gallery</legend>
-    <h1>Our black currants cropp</h1>
+    <h1>Our black currants crop</h1>
     <br><br>
     <div class="content-section">
-
-
-
-<style>
-.col-12 img {
-  opacity: 0.7;
-  cursor: pointer;
-  margin: 2rem;
-  width: 100%;
-}
-
-.col-12 img:hover {
-  opacity: 1;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-@media (max-width: 688px) {
-    .carousel-item>img {
-        max-height: 146px;
-    }
-}
-</style>
-
 
 <div class="container">
     <div class="row d-flex flex-wrap align-items-center" data-toggle="modal" data-target="#lightbox">
       <div class="col-12 col-md-6 col-lg-5">
-        <img src="{% static '1920x1080.webp' %}" width="274" height="154" data-target="#indicators" data-slide-to="0" alt="sunset black currant cropp" />
+        <img src="{% static '1920x1080.webp' %}" width="274" height="154" data-target="#indicators" data-slide-to="0" alt="sunset black currant crop" />
       </div>
 
       <div class="col-12 col-md-6 col-lg-5">
-        <img src="{% static 'blackcurrant-cropp-2.webp' %}" width="274" height="154" data-target="#indicators" data-slide-to="1" alt="" />
+        <img src="{% static 'blackcurrant-cropp-2.webp' %}" width="274" height="154" data-target="#indicators" data-slide-to="1" alt="regular sunlight black currant crop" />
       </div>
 
       <div class="col-12 col-md-6 col-lg-6">
-        <img src="{% static 'blackcurrant-cropp-3.webp' %}" data-target="#indicators" data-slide-to="2"  alt="" />
+        <img src="{% static 'blackcurrant-cropp-3.webp' %}" width="274" height="154" data-target="#indicators" data-slide-to="2"  alt="large black currant field" />
       </div>
 
       <div class="col-12 col-md-6 col-lg-3">
-        <img src="{% static 'blackcurrant-cropp-4.webp' %}" data-target="#indicators" data-slide-to="3"  alt="" />
+        <img src="{% static 'blackcurrant-cropp-4.webp' %}" data-target="#indicators" data-slide-to="3"  alt="fruits of black currant" />
       </div>
 </div>
 
@@ -69,41 +66,41 @@
 <div class="modal fade" id="lightbox" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content"  role="document">
-<!--        <button type="button" class="close text-right p-1" data-dismiss="modal" aria-label="Close">-->
-<!--          <span aria-hidden="true">&times;</span>-->
-<!--        </button>-->
+  <!--        <button type="button" class="close text-right p-1" data-dismiss="modal" aria-label="Close">-->
+  <!--          <span aria-hidden="true">&times;</span>-->
+  <!--        </button>-->
     <div id="indicators" class="carousel slide carousel-fade" data-interval="false">
 
-<!--  <ol class="carousel-indicators">-->
-<!--    <li data-target="#indicators" data-slide-to="0" class="active"></li>-->
-<!--    <li data-target="#indicators" data-slide-to="1"></li>-->
-<!--    <li data-target="#indicators" data-slide-to="2"></li>-->
-<!--    <li data-target="#indicators" data-slide-to="3"></li>-->
-<!--  </ol>-->
+  <!--  <ol class="carousel-indicators">-->
+  <!--    <li data-target="#indicators" data-slide-to="0" class="active"></li>-->
+  <!--    <li data-target="#indicators" data-slide-to="1"></li>-->
+  <!--    <li data-target="#indicators" data-slide-to="2"></li>-->
+  <!--    <li data-target="#indicators" data-slide-to="3"></li>-->
+  <!--  </ol>-->
   <div class="carousel-inner">
 
     <div class="carousel-item active">
+      <img class="d-block w-100" width="1136" height="639" src="{% static '1920x1080.webp' %}" alt="sunset black currant crop">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" width="1136" height="639" src="{% static 'blackcurrant-cropp-2.webp' %}" alt="regular sunlight black currant crop">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" width="1136" height="639" src="{% static 'blackcurrant-cropp-3.webp' %}" alt="large black currant field">
+    </div>
+    <div class="carousel-item" >
+      <img class="d-block w-100" src="{% static 'blackcurrant-cropp-4.webp' %}" alt="fruits of black currant">
+    </div>
+  </div>
 
-      <img class="d-block w-100" src="{% static '1920x1080.webp' %}" alt="sunset black currant cropp">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'blackcurrant-cropp-2.webp' %}" alt="black currant cropp">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'blackcurrant-cropp-3.webp' %}" alt="Third slide">
-    </div>
-      <div class="carousel-item" >
-      <img class="d-block w-100" src="{% static 'blackcurrant-cropp-4.webp' %}" alt="Third slide">
-    </div>
-      </div>
       <a class="carousel-control-prev" href="#indicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#indicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+      </a>
+      <a class="carousel-control-next" href="#indicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
 </div>
 
     </div>
