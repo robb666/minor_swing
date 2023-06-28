@@ -22,18 +22,28 @@
   <meta charset="utf-8">
 
   <!-- SEO -->
+  {% block seo %}{% endblock %}
   {% if post.page_title %}
     <title>{{ post.page_title }}</title>
-  {% else %}
-    <title>Frozen black currants bulk</title>
   {% endif %}
-
   {% if post.description %}
     <meta name="description" content="{{ post.description }}">
-  {% else %}
-    <meta name="description" content="Black currant wholesale, where black currant sales market, black currant to buy bulk, which currant, here to buy black currant for fruit industry, price">
   {% endif %}
-  <meta name="author" content="rbty">
+  <meta name="RbTy" content="BlAcK CuRrAnT WhOlEsAlE">
+
+
+<!--  {% if post.page_title %}-->
+<!--    <title>{{ post.page_title }}</title>-->
+<!--  {% else %}-->
+<!--    <title>Frozen black currants bulk</title>-->
+<!--  {% endif %}-->
+
+<!--  {% if post.description %}-->
+<!--    <meta name="description" content="{{ post.description }}">-->
+<!--  {% else %}-->
+<!--    <meta name="description" content="Black currant wholesale, where black currant sales market, frozen black currant to buy bulk, ribes nigrum, here to buy black currant for fruit industry, frozen black currants">-->
+<!--  {% endif %}-->
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -67,7 +77,7 @@
 
 
 <body>
-
+<!-- Background image -->
 <!--  <div class="bg-image"-->
 <!--     style="background-image: url('{% static '1920x1080.webp' %}'); height: 100vh;">-->
 
