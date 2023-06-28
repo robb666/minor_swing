@@ -60,6 +60,10 @@ def about(request):
     return render(request, 'blog/about.html')
 
 
+def gallery(request):
+    return render(request, 'blog/gallery.html')
+
+
 def location(request):
     return render(request, 'blog/location.html', {'access_token': settings.MAPBOX_ACCESS_TOKEN})
 
