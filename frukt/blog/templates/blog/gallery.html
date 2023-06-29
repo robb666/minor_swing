@@ -45,20 +45,20 @@
 
 <div class="container">
     <div class="row d-flex flex-wrap align-items-center" data-toggle="modal" data-target="#lightbox">
-      <div class="col-12 col-md-6 col-lg-5">
-        <img src="{% static '1920x1080.webp' %}" width="274" height="154" data-target="#indicators" data-slide-to="0" alt="sunset black currant crop" />
+      <div class="col-12 col-md-2 col-lg-5">
+        <img class="mx-auto d-block" src="{% static '1920x1080.webp' %}" width="274" height="154" data-target="#indicators" data-slide-to="0" alt="sunset black currant crop" />
       </div>
 
       <div class="col-12 col-md-6 col-lg-5">
-        <img src="{% static 'blackcurrant-cropp-2.webp' %}" width="274" height="154" data-target="#indicators" data-slide-to="1" alt="regular sunlight black currant crop" />
+        <img class="mx-auto d-block" src="{% static 'blackcurrant-cropp-2.webp' %}" width="274" height="154" data-target="#indicators" data-slide-to="1" alt="regular sunlight black currant crop" />
       </div>
 
       <div class="col-12 col-md-6 col-lg-6">
-        <img src="{% static 'blackcurrant-cropp-3.webp' %}" width="274" height="154" data-target="#indicators" data-slide-to="2"  alt="large black currant field" />
+        <img class="mx-auto d-block" src="{% static 'blackcurrant-cropp-3.webp' %}" width="274" height="154" data-target="#indicators" data-slide-to="2"  alt="large black currant field" />
       </div>
 
       <div class="col-12 col-md-6 col-lg-3">
-        <img src="{% static 'blackcurrant-cropp-4.webp' %}" data-target="#indicators" data-slide-to="3"  alt="fruits of black currant" />
+        <img class="mx-auto d-block" src="{% static 'blackcurrant-cropp-4.webp' %}" data-target="#indicators" data-slide-to="3"  alt="fruits of black currant" />
       </div>
 </div>
 
@@ -66,9 +66,7 @@
 <div class="modal fade" id="lightbox" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content"  role="document">
-  <!--        <button type="button" class="close text-right p-1" data-dismiss="modal" aria-label="Close">-->
-  <!--          <span aria-hidden="true">&times;</span>-->
-  <!--        </button>-->
+
     <div id="indicators" class="carousel slide carousel-fade" data-interval="false">
 
   <ol class="carousel-indicators">
