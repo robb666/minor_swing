@@ -17,7 +17,8 @@ urlpatterns = [
     path('contact/', index, name='form-contact'),
     path('harvest_calendar/', views.calendar, name='side-calendar'),
     path('faq/', views.faq, name='side-faq'),
-    path('<slug:slug>/', PostDetailView.as_view(), name='post-detail')
+    path('<slug:slug>/', PostDetailView.as_view(), name='post-detail'),
+    path('robots.txt', views.robots_txt),
 ]
 
 # if settings.DEBUG:

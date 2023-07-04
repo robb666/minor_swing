@@ -3,6 +3,8 @@ from django.views.generic import ListView, DetailView, CreateView
 from .models import Post
 from django.db.models import Q
 from django.conf import settings
+from django.http import HttpResponse
+from django.views.decorators.http import require_GET
 from django import forms
 
 
@@ -74,3 +76,12 @@ def calendar(request):
 
 def faq(request):
     return render(request, 'blog/FAQ.html')
+
+
+@require_GET
+def robots_txt(request):
+    lines = [
+        "User-Agent: *",
+        "Disallow: /?page=1",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
