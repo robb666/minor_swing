@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 <!-- SEO -->
 {% block seo %}
@@ -6,8 +7,11 @@
   <meta name="description" content="Get competitive wholesale prices for frozen black currants, sourced from eastern Poland's prime cultivation region. Inquire now for unbeatable offers">
 {% endblock seo %}
 
+{% block canonical_url %}
+  <link rel="canonical" href="https://blackcurrant-wholesale.com{% url 'blog-pricing' %}">
+{% endblock canonical_url%}
+
 {% block content %}
-{% load static %}
 
 <br>
 <legend class="border-bottom mb-4">Pricing</legend>

@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load static %}
 
 <!-- SEO -->
 {% block seo %}
@@ -6,8 +7,11 @@
   <meta name="description" content="Outlining the optimal harvesting periods in eastern Poland. Optimize your yield in our area">
 {% endblock seo %}
 
+{% block canonical_url %}
+  <link rel="canonical" href="https://blackcurrant-wholesale.com{% url 'side-calendar' %}">
+{% endblock canonical_url%}
+
 {% block content %}
-{% load static %}
 <br>
 <legend class="border-bottom mb-4">Harvest calendar</legend>
     <h1>For 2023</h1>
