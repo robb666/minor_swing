@@ -163,7 +163,7 @@ if USE_S3:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_STATIC_LOCATION}/'
     STATICFILES_STORAGE = 'frukt.storages.StaticStorage'
 
-    PUBLIC_MEDIA_LOCATION = ''  # <-- images
+    PUBLIC_MEDIA_LOCATION = 'blog_images'  # <-- images
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'frukt.storages.MediaStorage'
     # ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
