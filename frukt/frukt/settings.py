@@ -156,7 +156,7 @@ if USE_S3:
 
     AWS_S3_FILE_OVERWRITE = True
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.eu-west-1.amazonaws.com'
-    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=31536000'}
 
     # S3 static settings
     AWS_STATIC_LOCATION = 'static'
