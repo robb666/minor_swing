@@ -1,0 +1,2 @@
+# database copy
+scp -i "rsa1solbaer.pem" ubuntu@ec2-13-49-98-79.eu-north-1.compute.amazonaws.com:~/minor_swing/frukt/db.sqlite3 ~/Desktop
